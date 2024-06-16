@@ -443,12 +443,18 @@ nav .fa-solid{
     #header{
         background-image: url(images/phone-background.png);   
     }
+    
     .header-text{
-        margin-top: 100%;
-        font-size: 16px;
+        margin-top: 80%;
+        /* font-size: 16px; */
     }
     .header-text h1{
         font-size: 30px;
+    }
+    .header-text #element{
+        font-size: 35px;
+        /* color: #ff004f; */
+        color: rgb(17, 0, 255);
     }
     nav .fa-solid{
         display: block;
@@ -483,7 +489,7 @@ nav .fa-solid{
 
     .icons {
         top: 65%;
-        left: 40%;
+        left: 30%;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -583,6 +589,13 @@ nav .fa-solid{
     .contact-left .btn{
         text-align: center;
     }
+
+    /* ---------------copyright------------------ */
+    .footer-rights {
+        margin-top: 1rem;
+    }
+    
+
 }
 
 /* -------------projects.html-------------- */
