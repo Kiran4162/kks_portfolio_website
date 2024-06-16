@@ -445,14 +445,14 @@ nav .fa-solid{
     }
     
     .header-text{
-        margin-top: 80%;
+        margin-top: 92%;
         /* font-size: 16px; */
     }
     .header-text h1{
         font-size: 30px;
     }
     .header-text #element{
-        font-size: 35px;
+        font-size: 30px;
         /* color: #ff004f; */
         color: rgb(17, 0, 255);
     }
@@ -489,7 +489,7 @@ nav .fa-solid{
 
     .icons {
         top: 65%;
-        left: 30%;
+        left: 33%;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -592,7 +592,9 @@ nav .fa-solid{
 
     /* ---------------copyright------------------ */
     .footer-rights {
-        margin-top: 1rem;
+        margin-top: 15rem;
+        font-size: 12px;
+        text-align: center;
     }
     
 
