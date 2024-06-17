@@ -439,6 +439,20 @@ footer {
 nav .fa-solid{
     display: none;
 }
+
+
+/* @media only screen and (max-width: 890px){
+    .footer-rights {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+} */
+
+
 @media only screen and (max-width: 600px){
     #header{
         background-image: url(images/phone-background.png);   
@@ -592,16 +606,15 @@ nav .fa-solid{
 
     /* ---------------copyright------------------ */
     .footer-rights {
-        margin-top: 15rem;
         font-size: 12px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
         text-align: center;
     }
-    
-
 }
-
-/* -------------projects.html-------------- */
-
 
 
 

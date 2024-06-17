@@ -8,7 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Poppins:wght@400;700&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Poppins:wght@400;700&family=Raleway:wght@300&display=swap"
+        rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css">
 
@@ -68,7 +77,7 @@
             font-size: 15px;
         }
 
-        .buttons{
+        .buttons {
             border: 2px solid rgb(17, 0, 255);
             padding: 4px;
             border-radius: 10px;
@@ -129,6 +138,64 @@
         .btn:hover::before {
             width: 100%;
         }
+
+        /* Responsive */
+
+        @media only screen and (max-width: 600px) {
+            .header-text {
+                margin-top: 92%;
+                /* font-size: 16px; */
+            }
+
+            .header-text h1 {
+                font-size: 30px;
+            }
+
+            .header-text #element {
+                font-size: 30px;
+                /* color: #ff004f; */
+                color: rgb(17, 0, 255);
+            }
+
+            nav .fa-solid {
+                display: block;
+                font-size: 25px;
+            }
+
+            nav ul {
+                background: rgb(17, 0, 255);
+                position: fixed;
+                top: 0;
+                right: -200px;
+                width: 200px;
+                height: 100vh;
+                padding-top: 50px;
+                z-index: 2;
+                transition: right 0.5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 25px;
+            }
+
+            nav ul li a::after {
+                background: #fff;
+            }
+
+            nav ul .fa-solid {
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                cursor: pointer;
+            }
+
+            main {
+                flex: 1;
+                /* padding: 1rem 6rem 6rem; */
+                padding: 1rem 0.2rem;
+            }
+        }
     </style>
 
 </head>
@@ -139,10 +206,10 @@
             <nav>
                 <img src="images/logo.png" class="logo" alt="">
                 <ul id="sidemenu">
-                    <li><a href="index.html#header">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#portfolio">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#header" onclick="closemenu()">Home</a></li>
+                    <li><a href="index.html#about" onclick="closemenu()">About</a></li>
+                    <li><a href="index.html#portfolio" onclick="closemenu()">Projects</a></li>
+                    <li><a href="index.html#contact" onclick="closemenu()">Contact</a></li>
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -156,15 +223,19 @@
         <div class="card-container">
             <!-- Diabeties -->
             <div class="card">
-                <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" alt="Diabetes Prediction System">
+                <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg"
+                    alt="Diabetes Prediction System">
                 <div class="card-content">
                     <h2>Diabeties Prediction System</h2>
                     <p>This project is about is the person is suffering from diabeties or not</p>
                     <div class="buttons">
-                        <a href="projects/Dibeties Prediction System/Diabeties prediction guys.html"><button class="btn" target="_blank">HTML Code &nbsp;</button></a>
-                        <a href="projects/Dibeties Prediction System/Diabetes prediction guys.ipynb"><button class="btn" download="ipynb file">ipynb file</button></a>
+                        <a href="projects/Dibeties Prediction System/Diabeties prediction guys.html"><button class="btn"
+                                target="_blank">HTML Code &nbsp;</button></a>
+                        <a href="projects/Dibeties Prediction System/Diabetes prediction guys.ipynb"><button class="btn"
+                                download="ipynb file">ipynb file</button></a>
                         <a href=""><button class="btn">Github repo</button></a>
-                        <a href="projects/Dibeties Prediction System/Diabeties prediction guys.html"><button class="btn" download=" dataset">Dataset</button></a>
+                        <a href="projects/Dibeties Prediction System/Diabeties prediction guys.html"><button class="btn"
+                                download=" dataset">Dataset</button></a>
                     </div>
                 </div>
             </div>
@@ -176,10 +247,15 @@
                     <h2>Titanic Survival and Deaths Prediction</h2>
                     <p>This project is about the survival adn deaths of Titanic Incident</p>
                     <div class="buttons">
-                        <a href="projects/titanic/campus_valley_titanic_task_1.html" target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
-                        <a href="projects/titanic/campus_valley_titanic_task_1.ipynb"><button class="btn" download="ipynb file">ipynb file</button></a>
-                        <a href="https://github.com/Kiran4162/CAMPUSVALLEY_projects/tree/557b3c1bf459c194591a5173373cc71a52f495c0/week%201"><button class="btn">Github repo</button></a>
-                        <a href="projects/titanic/tested_titanic.csv"><button class="btn" download=" dataset">Dataset</button></a>
+                        <a href="projects/titanic/campus_valley_titanic_task_1.html" target="_blank"><button
+                                class="btn">HTML Code &nbsp;</button></a>
+                        <a href="projects/titanic/campus_valley_titanic_task_1.ipynb"><button class="btn"
+                                download="ipynb file">ipynb file</button></a>
+                        <a
+                            href="https://github.com/Kiran4162/CAMPUSVALLEY_projects/tree/557b3c1bf459c194591a5173373cc71a52f495c0/week%201"><button
+                                class="btn">Github repo</button></a>
+                        <a href="projects/titanic/tested_titanic.csv"><button class="btn"
+                                download=" dataset">Dataset</button></a>
                     </div>
                 </div>
             </div>
@@ -191,10 +267,15 @@
                     <h2>Iris Flower Classification</h2>
                     <p>This project is about the prediction of the Flowers</p>
                     <div class="buttons">
-                        <a href="projects/iris/campus_valley_iris_task_2.html" target="_blank"><button class="btn">HTML code &nbsp;</button></a>
-                        <a href="projects/iris/campus_valley_iris_task_2.ipynb"><button class="btn" download="ipynb file">ipynb file</button></a>
-                        <a href="https://github.com/Kiran4162/CAMPUSVALLEY_projects/tree/557b3c1bf459c194591a5173373cc71a52f495c0/week%202"><button class="btn">Github repo</button></a>
-                        <a href="projects/iris/campus_valley_iris_task_2.ipynb"><button class="btn" download=" dataset">Dataset</button></a>
+                        <a href="projects/iris/campus_valley_iris_task_2.html" target="_blank"><button class="btn">HTML
+                                code &nbsp;</button></a>
+                        <a href="projects/iris/campus_valley_iris_task_2.ipynb"><button class="btn"
+                                download="ipynb file">ipynb file</button></a>
+                        <a
+                            href="https://github.com/Kiran4162/CAMPUSVALLEY_projects/tree/557b3c1bf459c194591a5173373cc71a52f495c0/week%202"><button
+                                class="btn">Github repo</button></a>
+                        <a href="projects/iris/campus_valley_iris_task_2.ipynb"><button class="btn"
+                                download=" dataset">Dataset</button></a>
                     </div>
                 </div>
             </div>
@@ -206,10 +287,14 @@
                     <h2>Audi Car Price Prediction</h2>
                     <p>This project is about the Prediction of different Audi Cars Prices</p>
                     <div class="buttons">
-                        <a href="projects/audi car price prediction/Acmegrade_project _1_audi_car_price_prediction.html" target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
-                        <a href="projects/audi car price prediction/Acmegrade_project _1_audi_car_price_prediction.ipynb"><button class="btn" download="ipynb file">ipynb file</button></a>
+                        <a href="projects/audi car price prediction/Acmegrade_project _1_audi_car_price_prediction.html"
+                            target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
+                        <a
+                            href="projects/audi car price prediction/Acmegrade_project _1_audi_car_price_prediction.ipynb"><button
+                                class="btn" download="ipynb file">ipynb file</button></a>
                         <a href=""><button class="btn">Github repo</button></a>
-                        <a href="projects/audi car price prediction/audi.csv"><button class="btn" download=" dataset">Dataset</button></a>
+                        <a href="projects/audi car price prediction/audi.csv"><button class="btn"
+                                download=" dataset">Dataset</button></a>
                     </div>
                 </div>
             </div>
@@ -221,10 +306,14 @@
                     <h2>Movie Recomendation System</h2>
                     <p>This Project is about the Movie Recomendation Systems</p>
                     <div class="buttons">
-                        <a href="projects/movie recomendation system/Acmegrade_project_2_Movie_Recomendation_System.html" target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
-                        <a href="projects/movie recomendation system/Acmegrade_project_2_Movie_Recomendation_System.ipynb"><button class="btn" download="ipynb file">ipynb file</button></a>
+                        <a href="projects/movie recomendation system/Acmegrade_project_2_Movie_Recomendation_System.html"
+                            target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
+                        <a
+                            href="projects/movie recomendation system/Acmegrade_project_2_Movie_Recomendation_System.ipynb"><button
+                                class="btn" download="ipynb file">ipynb file</button></a>
                         <a href=""><button class="btn">Github repo</button></a>
-                        <a href="projects/movie recomendation system/movies.csv"><button class="btn" download=" dataset">Dataset</button></a>
+                        <a href="projects/movie recomendation system/movies.csv"><button class="btn"
+                                download=" dataset">Dataset</button></a>
                     </div>
                 </div>
             </div>
@@ -236,14 +325,17 @@
                     <h2>Movie Genre Classification</h2>
                     <p>This project is about classification of Movies according to their Genre</p>
                     <div class="buttons">
-                        <a href="projects/movie genre classification/Codsoft_Movie_Genre_Classification.html" target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
-                        <a href="projects/movie genre classification/Codsoft_Movie_Genre_Classification (1).ipynb"><button class="btn" download="ipynb file">ipynb file</button></a>
+                        <a href="projects/movie genre classification/Codsoft_Movie_Genre_Classification.html"
+                            target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
+                        <a href="projects/movie genre classification/Codsoft_Movie_Genre_Classification (1).ipynb"><button
+                                class="btn" download="ipynb file">ipynb file</button></a>
                         <a href=""><button class="btn">Github repo</button></a>
-                        <a href="projects/movie genre classification/datasst.zip"><button class="btn" download=" dataset">Dataset</button></a>
+                        <a href="projects/movie genre classification/datasst.zip"><button class="btn"
+                                download=" dataset">Dataset</button></a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Credit Card Fraud Detection -->
             <div class="card">
                 <img src="images/work-6.jpg" alt="Credit Card Fraud Detection">
@@ -251,19 +343,36 @@
                     <h2>Credit Card Fraud Detection</h2>
                     <p>This project is about detecting the Fraud done using Creditcards</p>
                     <div class="buttons">
-                        <a href="projects/creditcard fraud/campus_valley_creditcard_task_3.html" target="_blank"><button class="btn">HTML Code &nbsp;</button></a>
-                        <a href="projects/creditcard fraud/campus_valley_creditcard_task_3.ipynb"><button class="btn" download="ipynb file">ipynb file</button></a>
-                        <a href="https://github.com/Kiran4162/CAMPUSVALLEY_projects/tree/557b3c1bf459c194591a5173373cc71a52f495c0/week%203"><button class="btn">Github repo</button></a>
-                        <a href="projects/creditcard fraud/creditcard.rar"><button class="btn" download=" dataset">Dataset</button></a>
+                        <a href="projects/creditcard fraud/campus_valley_creditcard_task_3.html" target="_blank"><button
+                                class="btn">HTML Code &nbsp;</button></a>
+                        <a href="projects/creditcard fraud/campus_valley_creditcard_task_3.ipynb"><button class="btn"
+                                download="ipynb file">ipynb file</button></a>
+                        <a
+                            href="https://github.com/Kiran4162/CAMPUSVALLEY_projects/tree/557b3c1bf459c194591a5173373cc71a52f495c0/week%203"><button
+                                class="btn">Github repo</button></a>
+                        <a href="projects/creditcard fraud/creditcard.rar"><button class="btn"
+                                download=" dataset">Dataset</button></a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0"
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px"
+        }
+    </script>
+
     <footer>
         <div class="footer-rights">
             Copyright &#169; www.kksportfolio.com | All Rights Reserved
         </div>
     </footer>
 
-</body> 
+</body>
