@@ -490,7 +490,7 @@ nav ul li a:hover::after {
     position: fixed;
     margin: 0 auto;
     top: 10%;
-    left: 15%;
+    left: 10%;
     transform: translate(-50%, -10%);
     width: 1400px;
     /* Adjusted width for better content fit */
@@ -1091,37 +1091,6 @@ i {
     display: inline-block;
     transition: transform 0.5s ease-in-out;
 }
-
-/* .social-icons a:hover {
-    color: rgb(17, 0, 255);
-    transform: translateY(-5px);
-} */
-
-/* form input,
-form textarea {
-    width: 100%;
-    border: 0;
-    outline: none;
-    background: #262626;
-    padding: 15px;
-    margin: 15px 0;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 6px;
-}
-
-form .btn2 {
-    padding: 14px 60px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-#msg {
-    color: #fff;
-    margin-top: -40px;
-    display: block;
-} */
 
 /* footer */
 footer {
