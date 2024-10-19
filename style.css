@@ -31,7 +31,7 @@ body {
     padding: 10px 5%;
 }
 
-nav {
+/* nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -64,7 +64,7 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    /* background: #ff004f; */
+    /* background: #ff004f; *
     background: rgb(17, 0, 255);
     position: absolute;
     left: 0;
@@ -74,7 +74,83 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+} */
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%; /* Span the full width */
+    padding: 10px 20px; /* Adjust the padding for consistency */
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    color: #fff; /* Ensure the text is readable */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a slight shadow to make the nav bar stand out */
 }
+
+.logo {
+    width: 140px;
+    margin-left: 75px;
+    margin-right: 20px; /* Reduce space between logo and ul */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: 0; /* Align the ul to the right of the logo */
+    margin-right: 10vh; /* Align the ul to the right of the logo */
+    padding-left: 0; /* Ensure no extra padding on the left */
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(17, 0, 255); /* Your existing hover color */
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+    nav ul {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        width: 100%;
+    }
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+
+
+
 
 .container_image {
     display: flex;
