@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KKS Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Poppins:wght@400;700&family=Raleway:wght@300&display=swap"
@@ -13,6 +14,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMc7dP5gXxG2lqU3wi/0L4PBOn4SYz4X64JX/0" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -20,16 +23,133 @@
 </head>
 
 <body>
+    <div id="particles-js"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 100,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 5,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 2
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
     <div class="head-div">
         <!-- Home -->
         <div id="header" class="pages page-1">
             <div class="container">
                 <nav>
-                    <img src="images/logo.png" class="logo" alt="">
+                    <a href="#header"><img src="images/logo.png" class="logo" alt=""></a>
                     <ul id="sidemenu">
                         <li><a href="#header" onclick="closemenu()">Home</a></li>
                         <li><a href="#about" onclick="closemenu()">About</a></li>
-                        <li><a href="#portfolio" onclick="closemenu()">Projects</a></li>
+                        <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+                        <li><a href="#certificates" onclick="closemenu()">Certificates</a></li>
                         <li><a href="#contact" onclick="closemenu()">Contact</a></li>
                         <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                     </ul>
@@ -37,23 +157,87 @@
 
                 </nav>
 
-                <div class="header-text">
-                    <h1>Hi, My name is <span>Kiran</span>
-                        <div>and I am a passionate</div>
-                    </h1>
-                    <span id="element"></span>
+                <div class="container_image">
 
-                    <!-- <ul class="icons">
-                        <li><a href="https://github.com/Kiran4162" target="_blank"><i class="fab fa-github"
-                                    aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/kiran-kumar-sahu-216004218/" target="_blank"><i
-                                    class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/_._k_k_s_._/" target="_blank"><i class="fab fa-instagram"
-                                    aria-hidden="true"></i></a></li>
-                    </ul> -->
+                    <div class="col-6">
+                        <div class="left">
+                            <div class="header-text">
+                                <h1>Hi, My name is <span>Kiran</span>
+                                    <div>and I am a passionate</div>
+                                </h1>
+                                <span id="element"></span>
+                            </div>
+                            <div class="project_counts">
+                                <div class="count-language">
+                                    <h1><img src="images/icons/pyt-b.png" alt="">10</h1>
+                                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Python</h2>
+                                </div>
+                                <div class="count-language">
+                                    <h1><img src="images/icons/exl-b.png" alt="">2</h1>
+                                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Excel</h2>
+
+                                </div>
+                                <div class="count-language">
+                                    <h1><img src="images/icons/sql-b.png" alt="">3</h1>
+                                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        SQL</h2>
+
+                                </div>
+                                <div class="count-language" style="margin-right: 4vh;">
+                                    <h1><img src="images/icons/pow-b.png" alt="">2</h1>
+                                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Power BI</h2>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="right">
+                            <img src="images/backgroung_transparent_dark_modified.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            // top part
+            // Div glow effect on hover
+            const page_1 = document.querySelector('.project_counts');
+
+            page_1.addEventListener('mousemove', (e) => {
+                const rect = page_1.getBoundingClientRect();
+                const x = e.clientX - rect.left; // X position of the mouse relative to the div
+                const y = e.clientY - rect.top;  // Y position of the mouse relative to the div
+
+                // Glow effect following cursor
+                const glowSize = 20; // Adjust glow size
+                const offsetX = (x / page_1.offsetWidth - 0.5) * glowSize; // Calculate horizontal offset
+                const offsetY = (y / page_1.offsetHeight - 0.5) * glowSize; // Calculate vertical offset
+
+                // Calculate rotation based on cursor position
+                const rotateX = ((y / page_1.offsetHeight) - 0.5) * 30; // Tilt vertically
+                const rotateY = ((x / page_1.offsetWidth) - 0.5) * -30; // Tilt horizontally
+
+                // Apply the 3D rotation and glow effect
+                page_1.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                // hoverDiv.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(255, 255, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                page_1.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(0, 0, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                page_1.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 80%)`;
+            });
+
+            // Reset glow when the mouse leaves the div
+            page_1.addEventListener('mouseleave', () => {
+                page_1.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                page_1.style.boxShadow = 'none';
+                // page_1.style.background = 'rgba(255, 255, 255, 0.1)';
+                page_1.style.background = 'Transparent';
+            });
+
+        </script>
 
         <!-- About -->
         <div id="about" class="pages page-2">
@@ -112,134 +296,1978 @@
             </div>
         </div>
 
-        <!-- portfolio -->
+        <script>
+            // top part
+            // Div glow effect on hover
+            const page_2 = document.querySelector('.about-col-2');
 
+            page_2.addEventListener('mousemove', (e) => {
+                const rect = page_2.getBoundingClientRect();
+                const x = e.clientX - rect.left; // X position of the mouse relative to the div
+                const y = e.clientY - rect.top;  // Y position of the mouse relative to the div
+
+                // Glow effect following cursor
+                const glowSize = 20; // Adjust glow size
+                const offsetX = (x / page_2.offsetWidth - 0.5) * glowSize; // Calculate horizontal offset
+                const offsetY = (y / page_2.offsetHeight - 0.5) * glowSize; // Calculate vertical offset
+
+                // Calculate rotation based on cursor position
+                const rotateX = ((y / page_2.offsetHeight) - 0.5) * 20; // Tilt vertically
+                const rotateY = ((x / page_2.offsetWidth) - 0.5) * -20; // Tilt horizontally
+
+                // Apply the 3D rotation and glow effect
+                page_2.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                // hoverDiv.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(255, 255, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                page_2.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(0, 0, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                page_2.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 80%)`;
+            });
+
+            // Reset glow when the mouse leaves the div
+            page_2.addEventListener('mouseleave', () => {
+                page_2.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                page_2.style.boxShadow = 'none';
+                // page_2.style.background = 'rgba(255, 255, 255, 0.1)';
+                page_2.style.background = 'transparent';
+            });
+
+        </script>
+
+        <!-- portfolio -->
         <div id="portfolio" class="pages page-3">
-            <div class="container">
+            <div class="container" id="portfolioblur" class="portfolioactive">
                 <h1 class="sub-title">My Works</h1>
-                <div class="work-list">
-                    <div class="work">
-                        <img src="images/work-1.png" alt="">
-                        <div class="layer">
-                            <h1>Titanic Survival and Deaths Prediction</h1>
-                            <p>This project is about the survival adn deaths of Titanic Incident</p>
-                            <a href="ml_projects.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="grid-container-portfolio">
+                    <div class="grid-item design_p" data-popup="popup-13" onclick="toggle_portfolio(13)">
+                        <div class="content">
+                            <img src="images/work-13.jpeg" alt="">
+                            <h2>Road Accident Dashboard</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <!-- <img src="images/icons/pyt-b.png" alt="Python" class="icon"> -->
+                                    <!-- <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon"> -->
+                                    <!-- <img src="images/icons/ocv-b.png" alt="Open CV" class="icon"> -->
+                                    <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <!-- <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="work">
-                        <img src="images/work-3.png" alt="">
-                        <div class="layer">
-                            <h1>Audi Car Price Prediction</h1>
-                            <p>This project is about the Prediction of different Audi Cars Prices</p>
-                            <a href="ml_projects.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="grid-item design_p" data-popup="popup-12" onclick="toggle_portfolio(12)">
+                        <div class="content">
+                            <img src="images/work-12.jpeg" alt="">
+                            <h2>Gaming Components Shop Dashboard</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <!-- <img src="images/icons/pyt-b.png" alt="Python" class="icon"> -->
+                                    <!-- <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon"> -->
+                                    <!-- <img src="images/icons/ocv-b.png" alt="Open CV" class="icon"> -->
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon"> -->
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="work">
-                        <img src="images/work-4.png" alt="">
-                        <div class="layer">
-                            <h1>Movie Recomendation System</h1>
-                            <p>This Project is about the Movie Recomendation Systems</p>
-                            <a href="ml_projects.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="grid-item design_p" data-popup="popup-11" onclick="toggle_portfolio(11)">
+                        <div class="content">
+                            <img src="images/work-11.jpg" alt="">
+                            <h2>Atlitic Hardware Dashboard</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <!-- <img src="images/icons/pyt-b.png" alt="Python" class="icon"> -->
+                                    <!-- <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon"> -->
+                                    <!-- <img src="images/icons/ocv-b.png" alt="Open CV" class="icon"> -->
+                                    <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-10" onclick="toggle_portfolio(10)">
+                        <div class="content">
+                            <img src="images/work-10.jpg" alt="">
+                            <h2>Facial Recognition System</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <img src="images/icons/ocv-b.png" alt="Open CV" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-9" onclick="toggle_portfolio(9)">
+                        <div class="content">
+                            <img src="images/work-9.jpg" alt="">
+                            <h2>Credit Card Fraud Detection</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="grid-item" data-popup="popup-3" onclick="toggle_portfolio(3)">
+                        <div class="content">
+                            <img src="images/work-3.png" alt="">
+                            <h2>Project Name</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> 
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="grid-item design_p" data-popup="popup-8" onclick="toggle_portfolio(8)">
+                        <div class="content">
+                            <img src="images/work-8.png" alt="">
+                            <h2>Movie Recomendation System</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-7" onclick="toggle_portfolio(7)">
+                        <div class="content">
+                            <img src="images/work-7.jpg" alt="">
+                            <h2>Diabeties Prediction System</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-6" onclick="toggle_portfolio(6)">
+                        <div class="content">
+                            <img src="images/work-6.png" alt="">
+                            <h2>Audi Car Price Prediction</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-5" onclick="toggle_portfolio(5)">
+                        <div class="content">
+                            <img src="images/work-5.jpg" alt="">
+                            <h2>Movie Genre Classification</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-4" onclick="toggle_portfolio(4)">
+                        <div class="content">
+                            <img src="images/work-4.png" alt="">
+                            <h2>Credit Card Fraud Detection EDA & FE</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-3" onclick="toggle_portfolio(3)">
+                        <div class="content">
+                            <img src="images/work-3.png" alt="">
+                            <h2>SMS Spam Classification</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-2" onclick="toggle_portfolio(2)">
+                        <div class="content">
+                            <img src="images/work-2.jpg" alt="">
+                            <h2>Iris Flower Classification</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item design_p" data-popup="popup-1" onclick="toggle_portfolio(1)">
+                        <div class="content">
+                            <img src="images/work-1.png" alt="">
+                            <h2>Titanic Survival and Deaths Prediction</h2>
+                            <div class="btn_container">
+                                <button class="btn_portfolio">See My Work</button>
+                                <div class="icons">
+                                    <img src="images/icons/pyt-b.png" alt="Python" class="icon">
+                                    <img src="images/icons/jup-b.png" alt="Jupyter Notebook" class="icon">
+                                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                                    <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                                    <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <a href="ml_projects.html" class="btn">See More</a>
             </div>
+
+
+            <script>
+                // top part
+                // Div glow effect on hover
+                const page_3 = document.querySelectorAll('.design_p');
+
+                page_3.forEach(item => {
+                    item.addEventListener('mousemove', (e) => {
+                        const rect = item.getBoundingClientRect();
+                        const x = e.clientX - rect.left; // X position of the mouse relative to the div
+                        const y = e.clientY - rect.top;  // Y position of the mouse relative to the div
+
+                        // Glow effect following cursor
+                        const glowSize = 20; // Adjust glow size
+                        const offsetX = (x / item.offsetWidth - 0.5) * glowSize; // Calculate horizontal offset
+                        const offsetY = (y / item.offsetHeight - 0.5) * glowSize; // Calculate vertical offset
+
+                        // Calculate rotation based on cursor position
+                        const rotateX = ((y / item.offsetHeight) - 0.5) * 20; // Tilt vertically
+                        const rotateY = ((x / item.offsetWidth) - 0.5) * -20; // Tilt horizontally
+
+                        // Apply the 3D rotation and glow effect
+                        item.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                        // hoverDiv.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(255, 255, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                        item.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(0, 255, 0, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                        item.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 80%)`;
+                    });
+
+                    // Reset glow when the mouse leaves the div
+                    item.addEventListener('mouseleave', () => {
+                        item.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                        item.style.boxShadow = 'none';
+                        // item.style.background = 'rgba(255, 255, 255, 0.1)';
+                        item.style.background = 'transparent';
+                    });
+                });
+
+            </script>
+
+
+            <!-- portfolio -->
+            <div class="portfoliopopup" id="popup-13">
+                <button class="cross-button" onclick="toggle_portfolio(13)">×</button> <!-- Cross Button -->
+                <h2>Road Accident Dashboard</h2>
+                <hr>
+                <div class="upper-half" style="display: flex;">
+                    <div class="left-part" style="flex: 40%; padding: 10px;">
+                        <h3>Excel Project</h3>
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                        <!-- <img src="images/icons/pyt-b.png" alt="Python" class="left_icon"> -->
+                        <!-- <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1"> -->
+                        <img src="images/icons/exl-b.png" alt="Excel" class="left_icon">
+                        <img src="images/icons/sql-b.png" alt="SQL" class="left_icon1">
+                        <!-- <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                        <h1>Road Accident Dashboard</h1>
+                        <div class="project-category">
+                            <!-- <h3>Excel</h3> -->
+                            <p>I created a dashboard using Excel and SQL to analyze road accidents, categorized by
+                                casualty severity (fatal, serious, slight), vehicle types, road and surface types,
+                                locations (urban or rural), lighting conditions, and date-based trends. The dashboard
+                                also compares current year vs previous year casualty data.</p>
+                            <a href="https://github.com/Kiran4162/Dashboards/blob/93f8b7314afb70da6d637a7ad53125de63928c4c/Road%20Accident%20Data.xlsb"
+                                target="_blank">Github</a>
+                            <a href="projects/Road Accident Data.xlsb" download>Make it yours</a>
+
+                            <!-- <a href="" target="_blank">Linkedin</a> -->
+                        </div>
+                    </div>
+                    <div class="right-part">
+                        <div class="image-slider" id="slider-13">
+                            <img src="images/slider/work-13.1.png" alt="Image 1">
+                            <!-- <img src="images/slider/work-2.png" alt="Image 2" style="display:none;"> -->
+                            <!-- <img src="images/slider/work-3.png" alt="Image 3" style="display:none;"> -->
+
+                            <!-- Navigation Arrows -->
+                            <div class="nav-arrows">
+                                <button class="prev" onclick="prevImage('slider-13')">❮</button>
+                                <button class="next" onclick="nextImage('slider-13')">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="lower-half">
+                    <!-- <h4>Full Description</h4> -->
+                    <p>In this dashboard using Excel and SQL to analyze various aspects of road
+                        accidents. The data is categorized by the severity of casualties, including fatal, serious, and
+                        slight casualties, providing insights into how different types of accidents impact overall
+                        safety. <br><br>
+
+                        The dashboard also breaks down casualties by vehicle types, covering cars and a wide range of
+                        other vehicles, allowing for a detailed comparison of how each contributes to accident
+                        statistics. It includes a comparison of current year vs previous year data to track changes and
+                        improvements over time.<br><br>
+
+                        Another key element of the analysis is the categorization of accidents by road type (e.g.,
+                        highways, local roads) and surface type (e.g., wet, dry), which helps in understanding the
+                        environmental factors contributing to accidents. The dashboard also distinguishes between
+                        accidents occurring in urban vs rural areas, shedding light on how location impacts casualty
+                        rates.<br><br>
+
+                        I also analyzed the effect of lighting conditions on accident severity, comparing accidents that
+                        occurred in daylight vs dark. In addition, the dashboard allows for date-based analysis,
+                        enabling the user to track accident trends over specific periods.<br><br>
+
+                        This comprehensive analysis provides a clear and detailed view of road safety trends and helps
+                        identify key areas for improvement in road and vehicle safety measures.</p>
+                    <div class="btn_container">
+                        <!-- <a href="">HTML Code</a> -->
+                        <!-- <a href="">ipynb File</a> -->
+                        <!-- <a href="">Github Repo</a> -->
+                        <!-- <a href="https://github.com/Kiran4162/Dashboards/blob/93f8b7314afb70da6d637a7ad53125de63928c4c/Road%20Accident%20Data.xlsb">Dataset</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="portfoliopopup" id="popup-12">
+                <button class="cross-button" onclick="toggle_portfolio(12)">×</button> <!-- Cross Button -->
+                <h2>Gaming Components Shop Dashboard</h2>
+                <hr>
+                <div class="upper-half" style="display: flex;">
+                    <div class="left-part" style="flex: 40%; padding: 10px;">
+                        <h3>Power BI Project</h3>
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                        <!-- <img src="images/icons/pyt-b.png" alt="Python" class="left_icon"> -->
+                        <!-- <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1"> -->
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon"> -->
+                        <img src="images/icons/sql-b.png" alt="SQL" class="left_icon">
+                        <img src="images/icons/pow-b.png" alt="Power BI" class="left_icon1">
+                        <h1>Gaming Components Shop Dashboard</h1>
+                        <div class="project-category">
+                            <!-- <h3>Excel</h3> -->
+                            <p>I created a dashboard for a computer shop that sells a wide range of components, from
+                                budget to high-end, for both gaming and productivity. The dashboard revealed that
+                                monitors, CPUs, and graphic cards are the most profitable components, and it also
+                                compares supervisor performance, top states by sales and profit, and features an
+                                animated graph showing trends over time.</p>
+                            <a href="https://github.com/Kiran4162/Dashboards/blob/93f8b7314afb70da6d637a7ad53125de63928c4c/Jaipur%20Global%20Services%20-%20Assessment%20-%20Online%20ECommerce%20Dashboard.pbix"
+                                target="_blank">Github</a>
+                            <a href="projects/Gaming Components Shop Dashboard.pbix" download>Make it yours</a>
+
+                            <!-- <a href="" target="_blank">Linkedin</a> -->
+                        </div>
+                    </div>
+                    <div class="right-part">
+                        <div class="image-slider" id="slider-12">
+                            <img src="images/slider/work-12.1.png" alt="Image 1">
+                            <img src="images/slider/work-12.2.png" alt="Image 2" style="display:none;">
+                            <img src="images/slider/work-12.3.png" alt="Image 3" style="display:none;">
+                            <img src="images/slider/work-12.4.png" alt="Image 4" style="display:none;">
+                            <img src="images/slider/work-12.5.png" alt="Image 5" style="display:none;">
+                            <img src="images/slider/work-12.6.png" alt="Image 6" style="display:none;">
+
+                            <!-- Navigation Arrows -->
+                            <div class="nav-arrows">
+                                <button class="prev" onclick="prevImage('slider-12')">❮</button>
+                                <button class="next" onclick="nextImage('slider-12')">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="lower-half">
+                    <!-- <h4>Full Description</h4> -->
+                    <p>I developed a detailed dashboard for a computer shop that sells a comprehensive range of
+                        computer-related components, including gaming and productivity-focused items. The products range
+                        from budget-friendly options to high-end components, covering everything from A to Z in the
+                        computer world. Through the data, I discovered that monitors, CPUs, and graphic cards generate
+                        significantly more profit compared to other components, providing valuable insights into the
+                        shop's top-performing products. <br><br>
+
+                        Additionally, I included a comparison of supervisor performance, showing which supervisors
+                        contributed the most profit, and this analysis can be broken down by year and month for a more
+                        detailed view. The dashboard also highlights the top-performing states in terms of sales,
+                        profit, and specific product categories, giving the store a clear view of geographical
+                        performance.<br><br>
+
+                        One of the standout features of this dashboard is the animated graph I created, which visualizes
+                        sales and profit trends over time, providing a dynamic way to track changes and performance
+                        across different periods. This dashboard offers a clear, data-driven picture of the store's
+                        operations and helps inform future sales and marketing strategies.
+                    </p>
+                    <div class="btn_container">
+                        <!-- <a href="">HTML Code</a> -->
+                        <!-- <a href="">ipynb File</a> -->
+                        <!-- <a href="">Github Repo</a> -->
+                        <!-- <a href="">Dataset</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="portfoliopopup" id="popup-11">
+                <button class="cross-button" onclick="toggle_portfolio(11)">×</button> <!-- Cross Button -->
+                <h2>Atlitic Hardware Dashboard</h2>
+                <hr>
+                <div class="upper-half" style="display: flex;">
+                    <div class="left-part" style="flex: 40%; padding: 10px;">
+                        <h3>Power BI Project</h3>
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                        <!-- <img src="images/icons/pyt-b.png" alt="Python" class="left_icon"> -->
+                        <!-- <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1"> -->
+                        <img src="images/icons/exl-b.png" alt="Excel" class="left_icon">
+                        <img src="images/icons/sql-b.png" alt="SQL" class="left_icon1">
+                        <img src="images/icons/pow-b.png" alt="Power BI" class="left_icon1">
+                        <h1>Atlitic Hardware Dashboard</h1>
+                        <div class="project-category">
+                            <!-- <h3>Excel</h3> -->
+                            <p>I developed a dashboard for a hardware shop that analyzes total sales, quantity sold, top
+                                regions, markets, customer segments, and product types. The dashboard visualizes trends
+                                based on year and month for effective decision-making.</p>
+                            <a href="https://github.com/Kiran4162/Dashboards/blob/93f8b7314afb70da6d637a7ad53125de63928c4c/Atlitic%20Hardware%20%20dashboard.pbix"
+                                target="_blank">Github</a>
+                            <a href="projects/Atlitic Hardware  dashboard.pbix" download>Make it yours</a>
+                            <!-- <a href="" target="_blank">Linkedin</a> -->
+                        </div>
+                    </div>
+                    <div class="right-part">
+                        <div class="image-slider" id="slider-11">
+                            <img src="images/slider/work-11.1.png" alt="Image 1">
+                            <img src="images/slider/work-11.2.png" alt="Image 2" style="display:none;">
+                            <img src="images/slider/work-11.3.png" alt="Image 3" style="display:none;">
+
+                            <!-- Navigation Arrows -->
+                            <div class="nav-arrows">
+                                <button class="prev" onclick="prevImage('slider-11')">❮</button>
+                                <button class="next" onclick="nextImage('slider-11')">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="lower-half">
+                    <!-- <h4>Full Description</h4> -->
+                    <p>I developed a comprehensive dashboard for a hardware store that specializes in products such as
+                        brick, mortar, sand, and various other hardware items. The goal of the dashboard was to provide
+                        actionable insights by leveraging the store's sales data. It analyzes key performance indicators
+                        such as total sales, total quantity sold, and how these metrics vary across different regions
+                        and markets. The dashboard also differentiates between distributed products and the store's own
+                        products, allowing for a more granular understanding of which product types are performing
+                        better. <br><br>
+
+                        One of the key features of the dashboard is its ability to identify top-performing regions and
+                        markets, giving insights into where the shop is most successful. I also included a sales
+                        breakdown by customer, which provides information on customer buying behavior, allowing the
+                        store to identify its most valuable customers.<br><br>
+
+                        Furthermore, the dashboard enables the visualization of data based on specific time periods,
+                        including by year and month, making it easy to spot trends and seasonal patterns in sales. This
+                        time-based analysis helps the shop make better decisions regarding inventory management,
+                        marketing strategies, and targeting specific markets during peak periods.<br><br>
+
+                        By providing clear and interactive visualizations, the dashboard offers the store a powerful
+                        tool to understand its performance at a detailed level. This ultimately helps in optimizing
+                        business strategies, improving product offerings, and focusing efforts on areas that generate
+                        the most value for the business.
+                    </p>
+                    <div class="btn_container">
+                        <!-- <a href="">HTML Code</a> -->
+                        <!-- <a href="">ipynb File</a> -->
+                        <!-- <a href="">Github Repo</a> -->
+                        <!-- <a href="">Dataset</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="portfoliopopup" id="popup-10">
+                <button class="cross-button" onclick="toggle_portfolio(10)">×</button> <!-- Cross Button -->
+                <h2>Facial Recognition System</h2>
+                <hr>
+                <div class="upper-half" style="display: flex;">
+                    <div class="left-part" style="flex: 40%; padding: 10px;">
+                        <h3>Deep Learning Project</h3>
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                        <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                        <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                        <img src="images/icons/ocv-b.png" alt="Open CV" class="left_icon1">
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon"> -->
+                        <!-- <img src="images/icons/sql-b.png" alt="SQL" class="icon"> -->
+                        <!-- <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                        <h1>Facial Recognition System</h1>
+                        <div class="project-category">
+                            <!-- <h3>Excel</h3> -->
+                            <p>This project is a facial attendance system built using Flask, TensorFlow, and OpenCV. It
+                                captures faces using a webcam, recognizes them using a trained deep learning model, and
+                                records attendance. The system allows users to register their attendance through a GUI,
+                                stores face data, and can identify new faces or recognize unregistered ones. The
+                                MobileNetV2-based model is used for face recognition, and attendance is saved in a CSV
+                                file.</p>
+                            <a href="https://github.com/Kiran4162/Deep-Learning-Projects/tree/e7f4b47b281360e94dfc1a28418963cbedfeb776/Face-Recognition-Attendance-System_project"
+                                target="_blank">Github</a>
+                            <!-- <a href="" target="_blank">Linkedin</a> -->
+                        </div>
+                    </div>
+                    <div class="right-part">
+                        <div class="image-slider" id="slider-10">
+                            <img src="images/slider/work-10.1.png" alt="Image 1">
+                            <img src="images/slider/work-10.2.png" alt="Image 2" style="display:none;">
+                            <img src="images/slider/work-10.3.png" alt="Image 3" style="display:none;">
+                            <img src="images/slider/work-10.4.png" alt="Image 4" style="display:none;">
+                            <img src="images/slider/work-10.5.png" alt="Image 5" style="display:none;">
+                            <img src="images/slider/work-10.6.png" alt="Image 6" style="display:none;">
+                            <img src="images/slider/work-10.7.png" alt="Image 7" style="display:none;">
+                            <img src="images/slider/work-10.8.png" alt="Image 8" style="display:none;">
+                            <img src="images/slider/work-10.9.png" alt="Image 9" style="display:none;">
+                            <img src="images/slider/work-10.10.png" alt="Image 10" style="display:none;">
+
+                            <!-- Navigation Arrows -->
+                            <div class="nav-arrows">
+                                <button class="prev" onclick="prevImage('slider-10')">❮</button>
+                                <button class="next" onclick="nextImage('slider-10')">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="lower-half">
+                    <!-- <h4>Full Description</h4> -->
+                    <p>This facial attendance system is designed for real-time face detection, recognition, and
+                        attendance marking using deep learning and web technologies. The system is built using the Flask
+                        web framework for the user interface, TensorFlow/Keras for deep learning model development, and
+                        OpenCV for image and video capture. <br><br>
+
+                        <b>Key components of the system include: </b> <br>
+
+                        <b>Face Detection: </b> <br> The system uses OpenCV's CascadeClassifier to detect faces from
+                        webcam input. It ensures real-time face detection using Haar cascades and captures images when
+                        users interact with the system. <br><br>
+
+                        <b>Face Recognition Model: </b> <br> The face recognition model is based on the MobileNetV2
+                        architecture, which is pretrained on the ImageNet dataset. The model is fine-tuned for the task
+                        of facial recognition. It outputs a softmax-activated vector indicating the recognized user. The
+                        model is trained on resized face images, and a dropout layer is added for regularization to
+                        prevent overfitting. <br><br>
+
+                        <b>Training and Retraining: </b> <br> If new faces are added, the system supports retraining by
+                        either modifying the output layer to accommodate new classes (new users) or by creating a new
+                        model with MobileNetV2 as the base. Transfer learning is employed, where only the last few
+                        layers are retrained for faster training and better generalization. <br><br>
+
+                        <b>Attendance Marking: </b> <br> Once a face is recognized, the system logs the user's name,
+                        roll number, and the time of recognition into a CSV file named after the current date. The
+                        system also checks for unidentified users using a confidence threshold to avoid marking
+                        attendance for unregistered faces. <br><br>
+
+                        <b>Flask-based GUI: </b> <br> The project includes a Flask-based web interface where users can
+                        interact with the system, view attendance logs, and register their presence. The system uses
+                        HTML templates to render the attendance page and show live video feed for real-time face
+                        detection. <br><br>
+
+                        <b>Face Registration and Attendance: </b> <br> The project ensures that all registered users'
+                        face images are saved in a structured folder format, and attendance is recorded in a CSV file
+                        specific to the current date. The system can extract attendance data for a particular day and
+                        display the users who have marked their presence, along with the time. <br><br>
+                    </p>
+                    <div class="btn_container">
+                        <!-- <a href="">HTML Code</a> -->
+                        <!-- <a href="">ipynb File</a> -->
+                        <!-- <a href="">Github Repo</a> -->
+                        <!-- <a href="">Dataset</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfoliopopup" id="popup-9">
+                <button class="cross-button" onclick="toggle_portfolio(9)">×</button> <!-- Cross Button -->
+                <h2>Credit Card Fraud Detection</h2>
+                <hr>
+                <div class="upper-half" style="display: flex;">
+                    <div class="left-part" style="flex: 40%; padding: 10px;">
+                        <h3>Machine Learning Project</h3>
+                        <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                        <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                        <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon"> -->
+                        <!-- <img src="images/icons/sql-b.png" alt="SQL" class="icon"> -->
+                        <!-- <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                        <h1>Credit Card Fraud Detection</h1>
+                        <div class="project-category">
+                            <!-- <h3>Excel</h3> -->
+                            <p>In this project for <b>credit card fraud detection</b>, several tools and techniques are
+                                employed to preprocess, analyze, and model the dataset. The dataset is first loaded
+                                using <b>pandas</b>, and exploratory data analysis is performed using <b>matplotlib</b>
+                                and <b>seaborn</b> to
+                                visualize distributions of transaction time and amounts. The <b>boxcox</b>
+                                transformation from
+                                the <b>scipy</b> library is used to normalize the skewed transaction amount data.<br>
+
+                                The <b>SGDClassifier</b> from <b>scikit-learn</b> is used for classification, with
+                                <b>GridSearchCV</b>
+                                applied for <b>hyperparameter tuning</b>, specifically optimizing the <b>loss,
+                                    penalty</b>, and <b>alpha</b>
+                                parameters. Metrics such as <b>accuracy score, classification report</b>, and
+                                <b>confusion matrix</b>
+                                are used to evaluate the model's performance. Finally, pickle is employed to save and
+                                reload the trained model for future predictions.
+                            </p>
+                            <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Credit%20Card%20Fraud%20Detection%20Classification%201"
+                                target="_blank">Github Repo</a>
+                            <!-- <a href="" target="_blank">Github</a> -->
+                            <!-- <a href="" target="_blank">Linkedin</a> -->
+                        </div>
+                    </div>
+                    <div class="right-part">
+                        <div class="image-slider" id="slider-9">
+                            <img src="images/slider/work-9.1.png" alt="Image 1">
+                            <img src="images/slider/work-9.2.png" alt="Image 2" style="display:none;">
+                            <img src="images/slider/work-9.3.png" alt="Image 3" style="display:none;">
+                            <img src="images/slider/work-9.4.png" alt="Image 4" style="display:none;">
+                            <img src="images/slider/work-9.5.png" alt="Image 5" style="display:none;">
+
+                            <!-- Navigation Arrows -->
+                            <div class="nav-arrows">
+                                <button class="prev" onclick="prevImage('slider-9')">❮</button>
+                                <button class="next" onclick="nextImage('slider-9')">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="lower-half">
+                    <!-- <h4>Full Description</h4> -->
+                    <p>This project focuses on identifying fraudulent credit card transactions using machine learning
+                        techniques. By utilizing both supervised and unsupervised learning methods, Training models to
+                        detect anomalies and fraudulent behavior. Various classification algorithms, such as Logistic
+                        Regression, Random Forest, and XGBoost, were used, alongside hyperparameter tuning, to achieve
+                        high precision and recall scores.</p>
+                    <div class="btn_container"></div>
+                    <a href="projects/creditcard fraud/campus_valley_creditcard_task_3.html" target="_blank">HTML
+                        Code</a>
+                    <a href="projects/creditcard fraud/campus_valley_creditcard_task_3.ipynb"
+                        download="ibynb file">ipynb File</a>
+                    <a href="projects/creditcard fraud/creditcard.rar" download="Dataset">Dataset</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfoliopopup" id="popup-8">
+            <button class="cross-button" onclick="toggle_portfolio(8)">×</button> <!-- Cross Button -->
+            <h2>Movie Recomendation System</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Natural Language Processing Project</h3>
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel" class="icon"> -->
+                    <!-- <img src="images/icons/sql-b.png" alt="SQL" class="icon"> -->
+                    <!-- <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>Movie Recomendation System</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>In this project <b>movie recommendation system</b>, various tools and techniques are utilized
+                            to
+                            recommend movies based on multiple parameters such as <b>genres, keywords, cast,
+                                director</b>, and
+                            more. The dataset is first preprocessed using <b>pandas</b>, with missing values filled
+                            appropriately. <b>TF-IDF (Term Frequency-Inverse Document Frequency)</b> from the
+                            <b>sklearn</b>
+                            library is used to convert text data (movie attributes) into feature vectors, capturing the
+                            importance of words within the dataset.<br>
+
+                            <b>Cosine similarity</b> is then applied to measure the similarity between the feature
+                            vectors,
+                            which helps identify movies that are most similar to the one inputted by the user.
+                            <b>Difflib</b> is used to find close matches for the user-provided movie title to ensure
+                            accuracy in searching. Finally, the most similar movies are displayed by sorting the
+                            similarity scores and presenting the top recommendations.
+                        </p>
+                        <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Movie%20recomendation%20system"
+                            target="_blank">Github Repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-8">
+                        <img src="images/slider/work-8.1.png" alt="Image 1">
+                        <img src="images/slider/work-8.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-8.3.png" alt="Image 3" style="display:none;">
+                        <img src="images/slider/work-8.4.png" alt="Image 4" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-8')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-8')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>This project involves building a content-based movie recommendation system that suggests movies to
+                    users based on their preferences and viewing history. Using techniques like cosine similarity and
+                    collaborative filtering, I provided personalized movie recommendations. The project showcases the
+                    use of recommendation algorithms, feature extraction, and matrix factorization.</p>
+                <div class="btn_container"></div>
+                <a href="projects/movie recomendation system/Acmegrade_project_2_Movie_Recomendation_System.html"
+                    target="_blank">HTML Code</a>
+                <a href="projects/movie recomendation system/Acmegrade_project_2_Movie_Recomendation_System.ipynb"
+                    download="ipynb file">ipynb File</a>
+                <a href="projects/movie recomendation system/movies.csv" download="Dataset">Dataset</a>
+            </div>
+        </div>
+
+
+        <div class="portfoliopopup" id="popup-7">
+            <button class="cross-button" onclick="toggle_portfolio(7)">×</button> <!-- Cross Button -->
+            <h2>Diabeties Prediction System</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Machine Learning Project</h3>
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon"> 
+                        <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                        <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                        <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>Diabeties Prediction System</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>The <b>diabetes prediction project</b> begins with importing necessary libraries such as
+                            <b>pandas, numpy</b>,
+                            and machine learning tools like <b>LogisticRegression</b> and <b>SVC</b>. The dataset is
+                            read
+                            from a CSV
+                            file, and <b>exploratory data analysis (EDA)</b> reveals no missing values, no object types,
+                            and
+                            some
+                            false values in the columns. Age is converted into a categorical variable to better
+                            interpret
+                            the results.<br>
+
+                            Next, the dataset is examined for correlations between features, which are found to be weak.
+                            EDA
+                            is visualized using bar plots for features such as <b>Pregnancies, Glucose, and BMI</b>,
+                            where
+                            some
+                            patterns like higher pregnancies and glucose levels are observed in diabetic individuals.
+                            <b>Outliers</b> in the dataset are handled by capping extreme values for features such as
+                            pregnancies,
+                            glucose, blood pressure, and insulin.<br>
+
+                            After preprocessing, a <b>logistic regression</b> model is trained using the processed
+                            features.
+                            The
+                            model achieves an accuracy of around 75%, and hyperparameter tuning is done using
+                            <b>GridSearchCV</b>
+                            to improve performance. The optimized logistic regression model slightly improves the
+                            accuracy.
+                            Additionally, <b>support vector machine (SVM)</b> and <b>decision tree</b> models are built
+                            and
+                            optimized
+                            using <b>RandomizedSearchCV</b>, with each achieving competitive performance metrics.<br>
+
+                            Finally, hyperparameter tuning for <b>SVM</b> and <b>decision tree</b> models further
+                            refines
+                            the performance
+                            of the models, and <b>confusion matrices, classification reports</b>, and <b>ROC-AUC</b>
+                            scores
+                            are calculated
+                            to evaluate the predictive accuracy of the models.
+                        </p>
+                        <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Diabeties%20Prediction%20System"
+                            target="_blank">Github repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-7">
+                        <img src="images/slider/work-7.1.png" alt="Image 1">
+                        <img src="images/slider/work-7.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-7.3.png" alt="Image 3" style="display:none;">
+                        <img src="images/slider/work-7.4.png" alt="Image 4" style="display:none;">
+                        <img src="images/slider/work-7.5.png" alt="Image 5" style="display:none;">
+                        <img src="images/slider/work-7.6.png" alt="Image 6" style="display:none;">
+                        <img src="images/slider/work-7.7.png" alt="Image 7" style="display:none;">
+                        <img src="images/slider/work-7.8.png" alt="Image 8" style="display:none;">
+                        <img src="images/slider/work-7.9.png" alt="Image 9" style="display:none;">
+                        <img src="images/slider/work-7.10.png" alt="Image 10" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-7')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-7')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>In this project, I created a model to predict the likelihood of diabetes based on patient health
+                    data,
+                    such as age, BMI, glucose levels, and blood pressure. Multiple classification models were
+                    implemented,
+                    including Decision Trees, Support Vector Machines (SVM), and K-Nearest Neighbors (KNN).
+                    Hyperparameter
+                    tuning was performed to optimize the model's performance, achieving a balance between precision and
+                    recall.</p>
+                <div class="btn_container"></div>
+                <a href="projects/Dibeties Prediction System/Diabeties prediction guys.html" target="_blank">HTML
+                    Code</a>
+                <a href="projects/Dibeties Prediction System/Diabetes prediction guys.ipynb" download="ipynb file">ipynb
+                    file</a>
+                <a href="projects/Dibeties Prediction System/Diabeties prediction guys.html"
+                    download=" dataset">Dataset</a>
+            </div>
+        </div>
+
+        <div class="portfoliopopup" id="popup-6">
+            <button class="cross-button" onclick="toggle_portfolio(6)">×</button> <!-- Cross Button -->
+            <h2>Audi Car Price Prediction</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Machine Learning Project</h3>
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon"> 
+                <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>Audi Car Price Prediction</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>This <b>Audi car price prediction</b> project employs multiple machine learning regression
+                            techniques to
+                            predict the prices of Audi cars based on various features such as <b>model, year, mileage,
+                                fuel
+                                type</b>, and <b>engine size</b>. The dataset undergoes preprocessing, including
+                            <b>label
+                                encoding</b> for
+                            categorical features like transmission and fuel type, allowing the models to interpret the
+                            non-numeric data.<br>
+
+                            The project begins by splitting the data into training and testing sets and evaluating
+                            different
+                            regression models. First, <b>Linear Regression</b> is applied to establish a basic baseline
+                            for
+                            price prediction. This is followed by the <b>Support Vector Regressor (SVR)</b>, which is
+                            particularly useful for capturing non-linear relationships within the data. To improve model
+                            performance, ensemble methods like <b>Random Forest Regressor</b> and <b>Extra Tree
+                                Regressor</b> are
+                            also tested. These models work by combining multiple decision trees to enhance prediction
+                            accuracy and handle data variance better.<br>
+
+                            To fine-tune the Random Forest model, both <b>RandomizedSearchCV</b> and <b>GridSearchCV</b>
+                            are
+                            used
+                            for hyperparameter tuning. <b>RandomizedSearchCV</b> provides faster results by sampling a
+                            set
+                            of
+                            hyperparameters, while <b>GridSearchCV</b> exhaustively tests all combinations for the best
+                            result,
+                            though at the cost of longer computation time. The <b>CatBoost Regressor</b> is also
+                            explored as
+                            a more
+                            specialized method for handling categorical data without the need for extensive
+                            preprocessing.<br>
+
+                            For performance evaluation, metrics such as <b>R-squared</b>, <b>Mean Squared Error
+                                (MSE)</b>,
+                            and
+                            <b>Mean Absolute Error (MAE)</b> are used to compare the models. The project concludes by
+                            serializing the final model using <b>Pickle</b>, making it deployable for future predictions
+                            without needing to retrain it from scratch.<br>
+
+                            This comprehensive approach demonstrates how different machine learning techniques can be
+                            applied to regression problems, with each method's strengths and limitations highlighted
+                            throughout the process.
+                        </p>
+                        <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Audi%20car%20price%20prediction"
+                            target="_blank">Github repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-6">
+                        <img src="images/slider/work-6.1.png" alt="Image 1">
+                        <img src="images/slider/work-6.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-6.3.png" alt="Image 3" style="display:none;">
+                        <img src="images/slider/work-6.4.png" alt="Image 4" style="display:none;">
+                        <img src="images/slider/work-6.5.png" alt="Image 5" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-6')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-6')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>In this project, I developed a machine learning model to predict the price of Audi cars based on
+                    features
+                    such as model, year, mileage, and fuel type. I used multiple regression models and performed
+                    hyperparameter tuning to improve the prediction accuracy. This project demonstrates the ability to
+                    preprocess automotive datasets, feature engineering, and model optimization using advanced
+                    techniques.
+                </p>
+                <div class="btn_container"></div>
+                <a href="projects/audi car price prediction/Acmegrade_project _1_audi_car_price_prediction.html"
+                    target="_blank">HTML Code</a>
+                <a href="projects/audi car price prediction/Acmegrade_project _1_audi_car_price_prediction.ipynb"
+                    download="ipynb file">ipynb file</a>
+                <a href="projects/audi car price prediction/audi.csv" download=" dataset">Dataset</a>
+            </div>
+        </div>
+
+        <div class="portfoliopopup" id="popup-5">
+            <button class="cross-button" onclick="toggle_portfolio(5)">×</button> <!-- Cross Button -->
+            <h2>Movie Genre Classification</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Natural Language Processing Project</h3>
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon"> 
+                <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>Movie Genre Classification</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>This project for movie genre classification employs a combination of <b>Natural Language
+                                Processing
+                                (NLP)</b> and machine learning techniques to predict a film's genre based on its plot
+                            summary. The
+                            process begins with data loading using the <b>pandas</b> library, which is responsible for
+                            handling
+                            the datasets containing movie descriptions and genres. The datasets are read from text files
+                            and
+                            structured into DataFrames for easier manipulation and analysis.<br>
+
+                            Text preprocessing is a critical step in preparing the data for machine learning. The
+                            <b>nltk</b>
+                            library is utilized for natural language processing tasks, such as <b>tokenization</b> and
+                            <b>stopword
+                                removal</b>. A custom function is defined to clean the plot summaries by converting text
+                            to
+                            lowercase, removing URLs and punctuation, and eliminating common English stopwords, thereby
+                            retaining only the meaningful words that contribute to the classification task. The cleaned
+                            text
+                            is stored in a new column within the DataFrame.<br>
+
+                            To convert the cleaned text into a numerical format that machine learning algorithms can
+                            interpret, the code employs the <b>TfidfVectorizer</b> from <b>sklearn</b> This technique
+                            transforms the
+                            text data into <b>TF-IDF vectors</b>, capturing the importance of words in relation to the
+                            overall
+                            corpus. These vectors serve as input features for the classification models.<br>
+
+                            The models used for classification include <b>Multinomial Naive Bayes, Logistic
+                                Regression</b>,
+                            and
+                            <b>Support Vector Classifier (SVC)</b>, all from the <b>sklearn</b> library. The data is
+                            split
+                            into training
+                            and testing sets using <b>train_test_split</b>, allowing for model training and evaluation.
+                            Each
+                            model is trained on the training data and subsequently evaluated on the test data to assess
+                            its
+                            accuracy and performance, using metrics such as accuracy score and classification
+                            report.<br>
+
+                            To visualize the performance of each classifier, a pie chart is created, showing the
+                            accuracy of
+                            each model in predicting the genres. The results are compiled into a new DataFrame that
+                            includes
+                            the predicted genres alongside the actual genres from the test solution dataset, enabling a
+                            direct comparison. Finally, the trained <b>TF-IDF vectorizer</b> and the <b>Logistic
+                                Regression</b> model are
+                            saved to disk using the <b>pickle</b> library for future predictions on new movie
+                            descriptions.<br>
+
+                            Overall, this code provides a comprehensive pipeline for movie genre classification,
+                            showcasing
+                            the effective use of <b>text preprocessing, feature extraction</b>, and multiple machine
+                            learning
+                            models to achieve accurate genre predictions based on textual data.
+                        </p>
+                        <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Movie%20genre%20classification"
+                            target="_blank">Github repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-5">
+                        <img src="images/slider/work-5.1.png" alt="Image 1">
+                        <img src="images/slider/work-5.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-5.3.png" alt="Image 3" style="display:none;">
+                        <img src="images/slider/work-5.4.png" alt="Image 4" style="display:none;">
+                        <img src="images/slider/work-5.5.png" alt="Image 5" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-5')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-5')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>In this project, I built a classification model to predict the genre of a movie based on its plot
+                    description. By utilizing natural language processing (NLP) techniques, such as TF-IDF
+                    vectorization,
+                    and machine learning models like Naive Bayes and Random Forest, I classified movies into various
+                    genres.
+                    Hyperparameter tuning and cross-validation were used to refine the model's performance.</p>
+                <div class="btn_container"></div>
+                <a href="projects/movie genre classification/Codsoft_Movie_Genre_Classification.html"
+                    target="_blank">HTML
+                    Code</a>
+                <a href="projects/movie genre classification/Codsoft_Movie_Genre_Classification (1).ipynb"
+                    download="ipynb file">ipynb file</a>
+                <a href="projects/movie genre classification/datasst.zip" download=" dataset">Dataset</a>
+            </div>
+        </div>
+
+        <div class="portfoliopopup" id="popup-4">
+            <button class="cross-button" onclick="toggle_portfolio(4)">×</button> <!-- Cross Button -->
+            <h2>Credit Card Fraud Detection EDA & Feature Engineering</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Machine Learning Project</h3>
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon"> 
+                <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                        <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                        <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>Credit Card Fraud Detection EDA & Feature Engineering</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>In this project, <b>credit card fraud detection</b> is achieved through a systematic
+                            application
+                            of data
+                            preprocessing, exploratory data analysis, and machine learning techniques. The dataset
+                            consists
+                            of two parts: a training dataset with 1,296,675 rows and a test dataset with 555,719 rows,
+                            both
+                            containing 23 columns. The target variable, `is_fraud`, indicates whether a transaction is
+                            fraudulent (1) or genuine (0).<br><br>
+
+                            <b>Data Import and Initial Processing</b><br><br>
+
+                            The project begins by importing essential libraries such as <b>pandas, numpy,
+                                matplotlib</b>,
+                            and
+                            <b>seaborn</b> for data manipulation and visualization. It also includes various machine
+                            learning
+                            libraries from <b>scikit-learn</b>, such as <b>LogisticRegression, KNeighborsClassifier,
+                                RandomForestClassifier</b>, and <b>SVC</b> for building and evaluating models. The
+                            datasets
+                            are read
+                            into DataFrames, and unnecessary columns are dropped to streamline the analysis.<br><br>
+
+                            <b>Data Preprocessing</b><br><br>
+
+                            The project performs critical data preprocessing steps, including converting date columns
+                            from
+                            object types to datetime types. It generates new features based on existing data, such as
+                            categorizing transactions by the time of day <b>(morning, afternoon, evening, night)</b> and
+                            age
+                            groups
+                            <b>(Young, Middle_age, Old)</b> based on the date of birth. This enhances the dataset's
+                            richness
+                            and
+                            provides better context for model training.<br><br>
+
+                            The project further employs one-hot encoding to convert categorical variables into numerical
+                            formats suitable for machine learning algorithms, ensuring the model can interpret them
+                            effectively. The dataset is split into training and testing sets using
+                            <b>train_test_split</b>,
+                            with
+                            <b>70%</b> of the data reserved for <b>training</b> and <b>30%</b> for
+                            <b>testing</b>.<br><br>
+
+                            <b>Model Training and Evaluation</b><br><br>
+
+                            Multiple machine learning models are applied to the training data, including <b>Logistic
+                                Regression, K-Neighbors Classifier, Random Forest Classifier</b>, and <b>Support Vector
+                                Classifier
+                                (SVC)</b>. Each model's performance is assessed using metrics such as <b>accuracy,
+                                precision, recall</b>,
+                            and <b>F1-score</b>, which provide insights into their effectiveness in classifying
+                            fraudulent
+                            transactions. Notably, the <b>K-Neighbors Classifier</b> outperforms other models with an
+                            accuracy of
+                            <b>99.5%</b>, followed closely by Logistic Regression at <b>>99.4%</b>.<br><br>
+
+                            Hyperparameter tuning is implemented for the <b>Random Forest Classifier</b> using <b>Grid
+                                Search</b> to
+                            optimize model performance further, although it takes considerably longer to train. The
+                            <b>SVC</b>
+                            model is also explored, with the data standardized using <b>StandardScaler</b> to improve
+                            its
+                            training efficiency.<br><br>
+
+                            <b>Conclusion and Recommendations</b><br><br>
+
+                            In conclusion, the project demonstrates a comprehensive approach to <b>credit card fraud
+                                detection</b>
+                            by utilizing a variety of data processing techniques and machine learning models. The high
+                            accuracy achieved indicates the models robustness, making them suitable for practical
+                            application in fraud detection systems. For future work, exploring deployment strategies
+                            while
+                            maintaining one-hot encoding or utilizing label encoding can facilitate integration into web
+                            applications, enabling real-time fraud detection capabilities.
+                        </p>
+                        <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Credit%20Card%20Fraud%20Detection%202"
+                            target="_blank">Github repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-4">
+                        <img src="images/slider/work-4.1.png" alt="Image 1">
+                        <img src="images/slider/work-4.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-4.3.png" alt="Image 3" style="display:none;">
+                        <img src="images/slider/work-4.4.png" alt="Image 4" style="display:none;">
+                        <img src="images/slider/work-4.5.png" alt="Image 5" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-4')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-4')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>This project emphasizes exploratory data analysis (EDA) and feature engineering for the credit card
+                    fraud
+                    detection dataset. Here, I visualized transaction patterns, explored class imbalance, and engineered
+                    new
+                    features to enhance model performance. By cleaning and transforming the dataset, the project
+                    showcases
+                    the importance of EDA in building robust predictive models.</p>
+                <div class="btn_container"></div>
+                <a href="projects/Credit Card Fraud Detection 2/Codsoft_creditcard_fraud_detection.html"
+                    target="_blank">HTML Code</a>
+                <a href="projects/Credit Card Fraud Detection 2/Codsoft_creditcard_fraud_detection.ipynb"
+                    download="ipynb file">ipynb file</a>
+                <a href="projects/Credit Card Fraud Detection 2/dataset.rar" download=" dataset">Dataset</a>
+            </div>
+        </div>
+
+        <div class="portfoliopopup" id="popup-3">
+            <button class="cross-button" onclick="toggle_portfolio(3)">×</button> <!-- Cross Button -->
+            <h2>SMS Spam Classification</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Machine Learning Project</h3>
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon"> 
+                <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>SMS Spam Classification</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>The project implements a <b>spam detection system</b> using various libraries and techniques
+                            to
+                            process
+                            and analyze textual data. Initially, it employs <b>Pandas</b> to load and manipulate the
+                            dataset,
+                            which consists of SMS messages labeled as either <b>spam</b> or <b>ham</b>. The data
+                            undergoes
+                            preprocessing
+                            steps, including removing duplicates, renaming columns, and calculating features such as the
+                            number of characters, words, and sentences in each message, which aids in understanding the
+                            text's structure.<br>
+
+                            Text normalization techniques are applied, where all text is converted to lowercase, and
+                            unwanted characters are removed using <b>regex</b>. Additionally, the code utilizes
+                            <b>NLTK</b>
+                            to
+                            <b>tokenize the text, eliminate stop words</b>, and apply <b>stemming</b>, which reduces
+                            words
+                            to their root
+                            forms. This transformation results in a cleaner and more meaningful dataset. Following this,
+                            <b>CountVectorizer</b> is used to convert the processed text into a numerical format
+                            suitable
+                            for
+                            machine learning models.<br>
+
+                            For the classification task, the dataset is divided into training and testing sets using
+                            <b>train_test_split</b>. The models employed include <b>Gaussian Naive Bayes</b> and
+                            <b>Bernoulli Naive
+                                Bayes</b>, which are trained on the training dataset and then evaluated on the test set.
+                            The
+                            code
+                            concludes by printing the training and testing accuracy scores for both models, providing
+                            insight into their effectiveness in distinguishing between spam and ham messages. Overall,
+                            this
+                            code represents a comprehensive pipeline for building a spam detection system using natural
+                            language processing and machine learning techniques.
+                        </p>
+                        <a href="https://github.com/Kiran4162/CAMPUSVALLEY_projects/tree/557b3c1bf459c194591a5173373cc71a52f495c0/week%203"
+                            target="_blank">Github repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-3">
+                        <img src="images/slider/work-3.1.png" alt="Image 1">
+                        <img src="images/slider/work-3.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-3.3.png" alt="Image 3" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-3')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-3')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>This project aims to classify SMS messages as either spam or legitimate using natural language
+                    processing
+                    (NLP) and machine learning techniques. I used models such as Naive Bayes and Support Vector
+                    Machines,
+                    applying hyperparameter tuning to enhance accuracy. The project demonstrates proficiency in handling
+                    text data, tokenization, and building a real-time classifier.</p>
+                <div class="btn_container"></div>
+                <a href="projects/SMS Spam Detection/Codsoft_Spam_msg_Classifier.html" target="_blank">HTML Code</a>
+                <a href="projects//SMS Spam Detection/Codsoft_Spam_msg_Classifier.ipynb" download="ipynb file">ipynb
+                    file</a>
+                <a href="projects/SMS Spam Detection/spam.csv" download=" dataset">Dataset</a>
+            </div>
+        </div>
+
+        <div class="portfoliopopup" id="popup-2">
+            <button class="cross-button" onclick="toggle_portfolio(2)">×</button> <!-- Cross Button -->
+            <h2>Iris Flower Classification</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Machine Learning Project</h3>
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon"> 
+                <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>Iris Flower Classification</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>This project represents your first analysis project, focusing on the well-known <b>Iris
+                                dataset</b>,
+                            which is commonly used for classification tasks in machine learning. The project employs
+                            several
+                            libraries, including <b>NumPy</b>, <b>Pandas, Matplotlib</b> and <b>Seaborn</b>, to
+                            facilitate
+                            data
+                            manipulation, visualization, and analysis. The initial steps involve loading the dataset
+                            using
+                            <b>Seaborn</b> and exploring its structure through various methods, such as <b>head(),
+                                isnull()</b>,
+                            and <b>describe()</b>, which provide insights into the data distribution, missing values,
+                            and
+                            overall
+                            information about the dataset.<br>
+
+                            After the <b>exploratory data analysis (EDA)</b>, the features and target variables are
+                            defined.
+                            The
+                            feature set (X) consists of the four measurements (sepal length, sepal width, petal length,
+                            and petal width), while the target variable (y) contains the species of the iris plants. A
+                            correlation matrix is generated to assess the relationships between the features, visualized
+                            using a heatmap, allowing for an understanding of how the features interact with each
+                            other.<br>
+
+                            For the modeling phase, the dataset is split into training and testing subsets using
+                            <b>train_test_split</b> from <b>Scikit-learn</b>. A <b>Logistic Regression</b> classifier is
+                            chosen for
+                            this classification task. To optimize the model's hyperparameters, <b>GridSearchCV</b> is
+                            employed,
+                            which systematically explores various combinations of parameters such as penalty types,
+                            regularization strength (C), and maximum iterations. The best parameters and the
+                            corresponding
+                            accuracy score are identified upon fitting the model.<br>
+
+                            Once trained, predictions are made on the test dataset, and the performance is evaluated
+                            using
+                            accuracy scores and a classification report that provides detailed metrics for each class.
+                            Finally, the code includes an example of making predictions for specific flower
+                            measurements,
+                            showcasing the model's practical application. This project not only demonstrates fundamental
+                            data analysis and modeling techniques but also serves as a foundational experience in
+                            applying
+                            machine learning to real-world data.
+                        </p>
+                        <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Iris%20Flower%20Classification"
+                            target="_blank">Github repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-2">
+                        <img src="images/slider/work-2.1.png" alt="Image 1">
+                        <img src="images/slider/work-2.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-2.3.png" alt="Image 3" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-2')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-2')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>This classic project involves classifying Iris flowers into one of three species based on petal and
+                    sepal
+                    measurements. I applied multiple machine learning algorithms such as Logistic Regression, SVM, and
+                    k-NN
+                    to classify the flowers. The project includes EDA, feature scaling, and hyperparameter tuning to
+                    achieve
+                    optimal accuracy.</p>
+                <div class="btn_container"></div>
+                <a href="projects/iris/campus_valley_iris_task_2.html" target="_blank">HTML code</a>
+                <a href="projects/iris/campus_valley_iris_task_2.ipynb" download="ipynb file">ipynb file</a>
+                <a href="projects/iris/campus_valley_iris_task_2.ipynb" download=" dataset">Dataset</a>
+            </div>
+        </div>
+
+        <div class="portfoliopopup" id="popup-1">
+            <button class="cross-button" onclick="toggle_portfolio(1)">×</button> <!-- Cross Button -->
+            <h2>Titanic Survival and Deaths Prediction</h2>
+            <hr>
+            <div class="upper-half" style="display: flex;">
+                <div class="left-part" style="flex: 40%; padding: 10px;">
+                    <h3>Machine Learning Project</h3>
+                    <img src="images/icons/pyt-b.png" alt="Python" class="left_icon">
+                    <img src="images/icons/jup-b-i.png" alt="Jupyter Notebook" class="left_icon1">
+                    <!-- <img src="images/icons/exl-b.png" alt="Excel Icon" class="left_icon"> -->
+                    <!-- <img src="images/icons/jup-b.png" alt="Python" class="icon"> 
+                        <img src="images/icons/exl-b.png" alt="Excel" class="icon">
+                        <img src="images/icons/sql-b.png" alt="SQL" class="icon">
+                        <img src="images/icons/pow-b.png" alt="Power BI" class="icon"> -->
+                    <h1>Titanic Survival and Deaths Prediction</h1>
+                    <div class="project-category">
+                        <!-- <h3>Excel</h3> -->
+                        <p>In this project, I conduct an analysis of the <b>Titanic dataset</b> to predict passenger
+                            survival
+                            outcomes using <b>Logistic Regression</b>. The project begins by importing essential
+                            libraries
+                            such
+                            as <b>Pandas, NumPy, Matplotlib</b>, and <b>Seaborn</b> for data manipulation,
+                            visualization,
+                            and analysis. The dataset is loaded from a CSV file, and initial data exploration is
+                            performed
+                            using methods like `head()`, `nunique()`, and `describe()` to understand the data structure,
+                            unique values, and statistical summaries.<br>
+
+                            The analysis continues with an investigation of missing values, specifically in the 'Age'
+                            column, and an examination of survival counts across different passenger classes using
+                            **Seaborn's** `countplot`. The categorical variable 'Sex' is encoded into numerical values
+                            using
+                            **LabelEncoder** to facilitate model training. This is followed by visualizing the survival
+                            distribution based on sex, which reveals insights into how gender influences survival
+                            rates.<br>
+
+                            To handle the missing values in the 'Age' column, the median age is computed and used to
+                            fill
+                            any gaps, ensuring a complete dataset for modeling. The features selected for prediction are
+                            'Pclass', 'Sex', and 'Age', while the target variable is 'Survived'. The dataset is then
+                            split
+                            into training and testing sets using **train_test_split** from **Scikit-learn**. <br>
+
+                            The <b>Logistic Regression</b> classifier is trained on the training set, and predictions
+                            are
+                            made
+                            on the test set. The model's performance is evaluated using accuracy scores and a
+                            classification
+                            report, which provides detailed metrics for understanding the model's effectiveness.
+                            Finally,
+                            the code includes examples of predicting the survival outcome for specific passengers based
+                            on
+                            their class, gender, and age, demonstrating the practical application of the model. This
+                            project
+                            not only showcases your ability to apply machine learning techniques but also highlights
+                            your
+                            skills in data preprocessing, visualization, and model evaluation in a real-world context.
+                        </p>
+                        <a href="https://github.com/Kiran4162/Machine-Learning-Projects/tree/master/Titanic%20Survival%20and%20Deaths%20Classification"
+                            target="_blank">Github repo</a>
+                        <!-- <a href="" target="_blank">Github</a> -->
+                        <a href="" target="_blank">Linkedin</a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="image-slider" id="slider-1">
+                        <img src="images/slider/work-1.1.png" alt="Image 1">
+                        <img src="images/slider/work-1.2.png" alt="Image 2" style="display:none;">
+                        <img src="images/slider/work-1.3.png" alt="Image 3" style="display:none;">
+                        <img src="images/slider/work-1.4.png" alt="Image 4" style="display:none;">
+
+                        <!-- Navigation Arrows -->
+                        <div class="nav-arrows">
+                            <button class="prev" onclick="prevImage('slider-1')"
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">❮</button>
+                            <button class="next" onclick="nextImage('slider-1')"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="lower-half">
+                <!-- <h4>Full Description</h4> -->
+                <p>In this project, I created a predictive model to determine the likelihood of a passenger surviving
+                    the
+                    Titanic disaster based on features such as age, class, and family size. I used various machine
+                    learning
+                    algorithms, including Random Forest, Logistic Regression, and Gradient Boosting, along with feature
+                    engineering and hyperparameter tuning to increase prediction accuracy.</p>
+                <div class="btn_container"></div>
+                <a href="projects/titanic/campus_valley_titanic_task_1.html" target="_blank">HTML Code</a>
+                <a href="projects/titanic/campus_valley_titanic_task_1.ipynb" download="ipynb file">ipynb file</a>
+                <a href="projects/titanic/tested_titanic.csv" download=" dataset">Dataset</a>
+            </div>
+
+            <!-- javascript of portfolio -->
+            <script>
+                // <!-- portfolio script -->
+                function toggle_portfolio(index) {
+                    const blur_container = document.getElementById('portfolioblur');
+                    blur_container.classList.toggle('portfolioactive');
+                    const popupId = `popup-${index}`;
+                    const popup_box = document.getElementById(popupId);
+                    popup_box.classList.remove('animate');
+                    popup_box.classList.remove('close');
+                    if (popup_box.style.display === 'block') {
+                        popup_box.classList.add('close');
+                        setTimeout(() => {
+                            popup_box.style.display = 'none';
+                            popup_box.classList.remove('visible');
+                        }, 500); // Match the animation duration
+                        document.body.classList.remove('no-scroll');
+                        document.body.style.overflowY = 'auto';
+                    } else {
+                        popup_box.classList.add('animate');
+                        popup_box.classList.add('visible');
+                        popup_box.style.display = 'block';
+                        document.body.classList.add('no-scroll');
+                        document.body.style.overflowY = 'hidden';
+                    }
+                    if (popup_box.style.display === 'block') {
+                        currentIndex = 0; // Reset the index when opening a new popup
+                        showImage(currentIndex); // Show the first image
+                    }
+                    // Ensure event object is passed
+                    if (event) event.preventDefault();
+                }
+                // Add a click event listener to the "read more" button
+                document.querySelectorAll('.read-more').forEach(button => {
+                    // Add the animate class to the popup element
+                    button.addEventListener('click', () => {
+                        const popupId = button.parentNode.parentNode.dataset.portfoliopopup;
+                        const popup = document.getElementById(popupId);
+                        popup.classList.remove('close');
+                        popup.classList.add('animate');
+                        popup.style.display = 'block';
+                        document.body.classList.add('no-scroll');
+                        document.body.style.overflowY = 'hidden';
+                    });
+                });
+                // Event listener to close the popup when clicking outside
+                document.addEventListener('click', function (event) {
+                    const popupBox = document.querySelector('.portfoliopopup.visible');
+                    if (popupBox && !popupBox.contains(event.target) && !event.target.closest('.grid-item')) {
+                        toggle_portfolio(popupBox.id.split('-')[1]); // Close the popup if clicking outside
+                    }
+                });
+                // slider
+                let currentIndex = 0;
+                const images = document.querySelectorAll('.image-slider img');
+                console.log(`Total number of images: ${images.length}`);
+                function showImage(sliderId, index) {
+                    var slider = document.getElementById(sliderId);
+                    var images = slider.getElementsByTagName('img');
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.display = 'none';
+                    }
+                    images[index].style.display = 'block';
+                }
+                function nextImage(sliderId) {
+                    var slider = document.getElementById(sliderId);
+                    var images = slider.getElementsByTagName('img');
+                    var currentImageIndex = Array.from(images).findIndex(img => img.style.display === 'block');
+                    var newIndex = (currentImageIndex + 1) % images.length;
+                    showImage(sliderId, newIndex);
+                }
+                function prevImage(sliderId) {
+                    var slider = document.getElementById(sliderId);
+                    var images = slider.getElementsByTagName('img');
+                    var currentImageIndex = Array.from(images).findIndex(img => img.style.display === 'block');
+                    var newIndex = (currentImageIndex - 1 + images.length) % images.length;
+                    showImage(sliderId, newIndex);
+                }
+                // Initialize the first image as visible in each slider on page load
+                window.onload = function () {
+                    var sliders = document.querySelectorAll('.image-slider');
+                    sliders.forEach(function (slider) {
+                        var images = slider.getElementsByTagName('img');
+                        if (images.length > 0) {
+                            images[0].style.display = 'block';
+                        }
+                    });
+                };
+                // Event listeners for navigation buttons
+                document.querySelector('.next').addEventListener('click', nextImage);
+                document.querySelector('.prev').addEventListener('click', prevImage);
+
+            </script>
+        </div>
+
+
+
+        <!-- Certificates -->
+        <div id="certificates" class="pages page-4">
+            <div class="container" id="certificateblur" class="certificateactive">
+                <h1 class="sub-title">My Certificates</h1>
+                <div class="grid-container-certificate">
+                    <div class="grid-item design_c" data-popup="popup-14" onclick="toggle_certificate(14)">
+                        <div class="content">
+                            <img src="images/certificates/1_Students editorial Board.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-15" onclick="toggle_certificate(15)">
+                        <div class="content">
+                            <img src="images/certificates/2_Acmegrade.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-16" onclick="toggle_certificate(16)">
+                        <div class="content">
+                            <img src="images/certificates/3_Acmegrade.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-17" onclick="toggle_certificate(17)">
+                        <div class="content">
+                            <img src="images/certificates/4_the_sparks_foundation.png" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-18" onclick="toggle_certificate(18)">
+                        <div class="content">
+                            <img src="images/certificates/5_Codsoft.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-19" onclick="toggle_certificate(19)">
+                        <div class="content">
+                            <img src="images/certificates/17_Solar Secure Solutions.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-20" onclick="toggle_certificate(20)">
+                        <div class="content">
+                            <img src="images/certificates/6_Python.png" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-21" onclick="toggle_certificate(21)">
+                        <div class="content">
+                            <img src="images/certificates/7_Data_analytics.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-22" onclick="toggle_certificate(22)">
+                        <div class="content">
+                            <img src="images/certificates/8_Data_analytics.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-23" onclick="toggle_certificate(23)">
+                        <div class="content">
+                            <img src="images/certificates/9_bi.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-24" onclick="toggle_certificate(24)">
+                        <div class="content">
+                            <img src="images/certificates/10_bi.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-25" onclick="toggle_certificate(25)">
+                        <div class="content">
+                            <img src="images/certificates/11_bi.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-26" onclick="toggle_certificate(26)">
+                        <div class="content">
+                            <img src="images/certificates/16_Artificial Intelligence.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-27" onclick="toggle_certificate(27)">
+                        <div class="content">
+                            <img src="images/certificates/12_pgdca certificate.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-28" onclick="toggle_certificate(28)">
+                        <div class="content">
+                            <img src="images/certificates/13_pgdca marksheet.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-29" onclick="toggle_certificate(29)">
+                        <div class="content">
+                            <img src="images/certificates/14_Tally.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-item design_c" data-popup="popup-30" onclick="toggle_certificate(30)">
+                        <div class="content">
+                            <img src="images/certificates/15_wdb with java and oracle.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // top part
+                // Div glow effect on hover
+                const page_4 = document.querySelectorAll('.design_c');
+
+                page_4.forEach(item => {
+                    item.addEventListener('mousemove', (e) => {
+                        const rect = item.getBoundingClientRect();
+                        const x = e.clientX - rect.left; // X position of the mouse relative to the div
+                        const y = e.clientY - rect.top;  // Y position of the mouse relative to the div
+
+                        // Glow effect following cursor
+                        const glowSize = 20; // Adjust glow size
+                        const offsetX = (x / item.offsetWidth - 0.5) * glowSize; // Calculate horizontal offset
+                        const offsetY = (y / item.offsetHeight - 0.5) * glowSize; // Calculate vertical offset
+
+                        // Calculate rotation based on cursor position
+                        const rotateX = ((y / item.offsetHeight) - 0.5) * 20; // Tilt vertically
+                        const rotateY = ((x / item.offsetWidth) - 0.5) * -20; // Tilt horizontally
+
+                        // Apply the 3D rotation and glow effect
+                        item.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                        // hoverDiv.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(255, 255, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                        item.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(0, 255, 0, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                        item.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 80%)`;
+                    });
+
+                    // Reset glow when the mouse leaves the div
+                    item.addEventListener('mouseleave', () => {
+                        item.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                        item.style.boxShadow = 'none';
+                        // item.style.background = 'rgba(255, 255, 255, 0.1)';
+                        item.style.background = 'transparent';
+                    });
+                });
+
+            </script>
+
+
+            <div class="certificatepopup" id="popup-14">
+                <img src="images/certificates/1_Students editorial Board.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-15">
+                <img src="images/certificates/2_Acmegrade.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-16">
+                <img src="images/certificates/3_Acmegrade.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-17">
+                <img src="images/certificates/4_the_sparks_foundation.png" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-18">
+                <img src="images/certificates/5_Codsoft.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-19">
+                <img src="images/certificates/17_Solar Secure Solutions.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-20">
+                <img src="images/certificates/6_Python.png" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-21">
+                <img src="images/certificates/7_Data_analytics.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-22">
+                <img src="images/certificates/8_Data_analytics.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-23">
+                <img src="images/certificates/9_bi.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-24">
+                <img src="images/certificates/10_bi.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-25">
+                <img src="images/certificates/11_bi.jpg" alt="">
+            </div>
+            <div class="certificatepopup" id="popup-26">
+                <img src="images/certificates/16_Artificial Intelligence.jpg" alt="">
+            </div>
+            <div class="certificatepopup big" id="popup-27">
+                <img src="images/certificates/12_pgdca certificate.jpg" alt="">
+            </div>
+            <div class="certificatepopup big" id="popup-28">
+                <img src="images/certificates/13_pgdca marksheet.jpg" alt="">
+            </div>
+            <div class="certificatepopup big" id="popup-29">
+                <img src="images/certificates/14_Tally.jpg" alt="">
+            </div>
+            <div class="certificatepopup big" id="popup-30">
+                <img src="images/certificates/15_wdb with java and oracle.jpg" alt="">
+            </div>
+
+            <!-- Certificates -->
+            <script type="text/javascript">
+                function toggle_certificate(index) {
+                    const blur = document.getElementById('certificateblur');
+                    blur.classList.toggle('certificateactive');
+
+                    const popupId = `popup-${index}`;
+                    const popup_box = document.getElementById(popupId);
+
+                    popup_box.classList.remove('animate');
+                    popup_box.classList.remove('close');
+
+                    if (popup_box.style.display === 'block') {
+                        popup_box.classList.add('close');
+                        setTimeout(() => {
+                            popup_box.style.display = 'none';
+                            popup_box.classList.remove('visible');
+                        }, 500); // Match the animation duration
+                        document.body.classList.remove('no-scroll');
+                        document.body.style.overflowY = 'auto';
+                    } else {
+                        popup_box.classList.add('animate');
+                        popup_box.classList.add('visible');
+                        popup_box.style.display = 'block';
+                        document.body.classList.add('no-scroll');
+                        document.body.style.overflowY = 'hidden';
+                    }
+
+                    // Ensure event object is passed
+                    if (event) event.preventDefault();
+                }
+                // Event listener to toggle the no-scroll class when the popup is closed
+                document.addEventListener('click', function (event) {
+                    if (event.target.classList.contains('close') || event.target.closest('.certificatepopup')) {
+                        document.body.classList.remove('no-scroll');
+                        document.body.style.overflowY = 'auto';
+                    }
+                });
+
+                // Add a click event listener to the "read more" button
+                document.querySelectorAll('.click-to-view').forEach(button => {
+                    // Add the animate class to the popup element
+                    button.addEventListener('click', () => {
+                        const popupId = button.parentNode.parentNode.dataset.certificatepopup;
+                        const popup = document.getElementById(popupId);
+                        popup.classList.remove('close');
+                        popup.classList.add('animate');
+                        popup.style.display = 'block';
+                        document.body.classList.add('no-scroll');
+                        document.body.style.overflowY = 'hidden';
+                    });
+                });
+
+                // Event listener to close the popup when clicking outside
+                document.addEventListener('click', function (event) {
+                    const popupBox = document.querySelector('.certificatepopup.visible');
+                    if (popupBox && !popupBox.contains(event.target) && !event.target.closest('.grid-item')) {
+                        toggle_certificate(popupBox.id.split('-')[1]); // Close the popup if clicking outside
+                    }
+                });
+
+            </script>
         </div>
 
         <!-- Contact -->
-        <div id="contact" class="pages page-4">
+        <div id="contact" class="pages page-5">
             <div class="container">
                 <div class="row">
                     <div class="contact-left">
-                        <h1 class="sub-title">Contact Me</h1>
-                        <p><i class="fa-solid fa-paper-plane"></i>kirankumarsahu28@gmail.com</p>
-                        <!-- <p><i class="fa-solid fa-square-phone"></i>2214589545</p> -->
+                        <h1 class="sub-title">Lets Connect</h1>
                         <div class="social-icons">
-                            <a href="https://github.com/Kiran4162" target="_blank"><i
-                                    class="fa-brands fa-square-github"></i></a>
-                            <a href="https://www.linkedin.com/in/kiran-kumar-sahu-216004218/" target="_blank"><i
-                                    class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://www.instagram.com/_._k_k_s_._/" target="_blank"><i
-                                    class="fa-brands fa-square-instagram"></i></a>
+                            <div class="row_1">
+                                <a href="mailto:kirankumarsahu28@gmail.com" target="_blank" class="link"><i
+                                        class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;&nbsp;kirankumarsahu28@gmail.com</a>
+                                <a href="https://github.com/Kiran4162" target="_blank" class="link"><i
+                                        class="fa-brands fa-square-github"></i>&nbsp;&nbsp;&nbsp;https://github.com/Kiran4162</a>
+                            </div>
+                            <div class="row_2">
+                                <a href="https://www.linkedin.com/in/kiran-kumar-sahu-216004218/" target="_blank"
+                                    class="link linkedin"><i
+                                        class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;&nbsp;https://www.linkedin.com/in/kiran-kumar-sahu-216004218/</a>
+                                <a href="tel:7735167006" target="_blank" class="link"><i
+                                        class="fa-solid fa-square-phone"></i>&nbsp;&nbsp;&nbsp;7735167006</a>
+                            </div>
                         </div>
-                        <a href="images/Kiran-Kumar-Sahu Resume 2.pdf" class="btn" download>Download Resume</a>
-                    </div>
-                    <div class="contact-right">
-                        <form name="submit-to-google-sheet">
-                            <input type="text" name="Name" placeholder="Your Name" required>
-                            <input type="email" name="Email" placeholder="Your Email" required>
-                            <textarea name="Message" id="" rows="6" placeholder="Your Message"></textarea>
-                            <button type="submit" class="btn btn2">Submit</button>
-                        </form>
-                        <span id="msg"></span>
+                        <a href="images/Kiran Kumar Sahu-Data Analyst.pdf" class="btn" download>Download
+                            Resume</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+        <script>
+            // top part
+            // Div glow effect on hover
+            const page_5 = document.querySelector('.contact-left');
 
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
+            page_5.addEventListener('mousemove', (e) => {
+                const rect = page_5.getBoundingClientRect();
+                const x = e.clientX - rect.left; // X position of the mouse relative to the div
+                const y = e.clientY - rect.top;  // Y position of the mouse relative to the div
+
+                // Glow effect following cursor
+                const glowSize = 20; // Adjust glow size
+                const offsetX = (x / page_5.offsetWidth - 0.5) * glowSize; // Calculate horizontal offset
+                const offsetY = (y / page_5.offsetHeight - 0.5) * glowSize; // Calculate vertical offset
+
+                // Calculate rotation based on cursor position
+                const rotateX = ((y / page_5.offsetHeight) - 0.5) * 20; // Tilt vertically
+                const rotateY = ((x / page_5.offsetWidth) - 0.5) * -20; // Tilt horizontally
+
+                // Apply the 3D rotation and glow effect
+                page_5.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                // hoverDiv.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(255, 255, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                page_5.style.boxShadow = `${offsetX}px ${offsetY}px 15px rgba(0, 0, 255, 0.8), ${offsetX * 1.5}px ${offsetY * 1.5}px 30px rgba(255, 255, 255, 0.4)`;
+                page_5.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 80%)`;
+            });
+
+            // Reset glow when the mouse leaves the div
+            page_5.addEventListener('mouseleave', () => {
+                page_5.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                page_5.style.boxShadow = 'none';
+                // page_5.style.background = 'rgba(255, 255, 255, 0.1)';
+                page_5.style.background = 'transparent';
+            });
+
+        </script>
+
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <!-- Setup and start animation! -->
+        <script>
+            var typed = new Typed('#element', {
+                strings: ['Data Analyst', "ML Engineer", "Power BI Developer"],
+                typeSpeed: 80,
+                loop: true
+            });
+        </script>
+
+        <script>
+            var sidemenu = document.getElementById("sidemenu");
+            function openmenu() {
+                sidemenu.style.right = "0"
             }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
+
+            function closemenu() {
+                sidemenu.style.right = "-200px"
             }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab")
-        }
-    </script>
+        </script>
 
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyNAVqS9-e0-w8p53IAwoSRJETZPTHsNuwpryMLrXqsfQVsQC-zilYWMgFFiNYNQsaD/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully!"
-                    setTimeout(function () {
-                        msg.innerHTML = ""
-                    }, 5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
-
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <!-- Setup and start animation! -->
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Data Analyst', "ML Engineer", "Power BI Developer"],
-            typeSpeed: 80,
-            loop: true
-        });
-    </script>
-
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-        function openmenu() {
-            sidemenu.style.right = "0"
-        }
-
-        function closemenu() {
-            sidemenu.style.right = "-200px"
-        }
-    </script>
-
-    <footer>
-        <div class="footer-rights">
-            Copyright &#169; www.kksportfolio.com | All Rights Reserved
-        </div>
-    </footer>
+        <footer>
+            <div class="footer-rights">
+                Copyright &#169; www.kksportfolio.com | All Rights Reserved
+            </div>
+        </footer>
 </body>
 
 </html>

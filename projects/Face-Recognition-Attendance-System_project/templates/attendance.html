@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% extends "base.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance List</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Fade effect */
+        .fade {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            /* Transition effect */
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %} 
+    <div id="particles-js"></div>
+
+    <div class="fade" id="app">
+        <div class="containerattendance">
+            <h1>Attendance List</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll</th>
+                    <th>Time</th>
+                </tr>
+                {% for name, roll, time in zipped_data %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ roll }}</td>
+                    <td>{{ time }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <a href="{{ url_for('home') }}">Back to Home</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script>
+        // Smooth transition on page load
+        window.onload = function () {
+            var app = document.getElementById("app");
+            app.classList.add("fade-in");
+            setTimeout(() => {
+                app.classList.remove("fade-in");
+            }, 500);
+        }
+
+        function navigate(event, url) {
+            event.preventDefault(); // Prevent the default link behavior
+            var app = document.getElementById("app");
+            app.classList.remove("fade-in"); // Start fading out
+
+            setTimeout(() => {
+                window.location.href = url; // Navigate after fade-out
+            }, 500); // Time to match the CSS transition duration
+        }
+    </script>
+    {% endblock %} <!-- End of content block -->
+</body>
+
+</html>

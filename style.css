@@ -1,51 +1,37 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
+    /* overflow: hidden; */
     background: #000000;
     color: #fff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-#header{
+#particles-js {
+    position: fixed;
     width: 100%;
-    height: 100vh;
-    background-image: url(images/background.png);
-    background-size: cover;
-    background-position: center;
-}
-
-/* try */
-/* 
-.head-div{
-    width: 100%;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Make sure it stays behind other elements */
+    pointer-events: none; /* Allow pointer events to pass through */
 }
 
 
-.pages{
-    width: 100%;
-    height: 110vh;
-    gap: 1px;
-    scroll-snap-align: start;
-} */
-
-/* try */
-
-.container{
-    padding: 10px 10%;
+.container {
+    padding: 10px 5%;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,24 +43,24 @@ nav{
     z-index: 1000;
 }
 
-.logo{
+.logo {
     width: 140px;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
 
-nav ul li a{
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     position: relative;
 }
 
-nav ul li a::after{
+nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
@@ -86,21 +72,50 @@ nav ul li a::after{
     transition: 0.5s;
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after {
     width: 100%;
 }
 
-.header-text{
+.container_image {
+    display: flex;
+}
+
+.container_image .left,
+.container_image .right {
+    /* border: 2px solid red; */
+    display: inline-block;
+}
+
+.container_image .right {
+    margin-left: 20vh;
+    margin-top: 10vh;
+}
+
+.container_image .right img {
+    width: 80vh;
+    height: 88vh;
+    clip: rect(0, 0, 300vh, 0);
+    transition: filter 0.5s ease-in-out; /* Smooth transition for filter changes */
+}
+
+.container_image .right img:hover {
+    width: 80vh;
+    height: 88vh;
+    clip: rect(0, 0, 300vh, 0);
+    filter: drop-shadow(15px 15px 50px rgba(0, 26, 255, 0.5)); /* Optionally, increase shadow on hover */
+}
+
+.header-text {
     margin-top: 20%;
     font-size: 30px;
 }
 
-.header-text h1{
+.header-text h1 {
     font-size: 60px;
     margin-top: 20px;
 }
 
-.header-text h1 span{
+.header-text h1 span {
     /* color: #ff004f; */
     color: rgb(17, 0, 255);
 }
@@ -112,105 +127,105 @@ nav ul li a:hover::after{
     font-weight: 600;
 }
 
-/* icons */
+/* home --> project_counts */
+.project_counts {
+    display: inline-flex;
+    margin-top: 10vh;
+    padding: 3vh;
+    align-items: center;
+    /* border: 2px solid white; */
+    border-radius: 3vh;
 
-.icons {
     position: absolute;
-    top: 70%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: transparent;
+    perspective: 1000px;
+    /* Ensures a good 3D effect */
+    z-index: 2;
+    /* Keep container above the particles */
+}
+
+.project_counts .count-language {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
 }
 
-.icons li {
-    list-style: none;
+.project_counts .count-language h1 img {
+    width: 8vh;
 }
 
-.icons li a {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    display: block;
-    text-align: center;
-    margin: 0 10px;
-    border-radius: 50%;
-    padding: 6px;
-    box-sizing: border-box;
-    text-decoration: none;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(0deg, #ddd, #fff);
-    transition: .5s;
+/* home --> project_counts --> animation */
+
+.count-language img {
+    transition: all 0.2s ease-in-out;
 }
 
-.icons li a:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
+.count-language img:hover {
+    filter: drop-shadow(0 0 10px hsl(128, 100%, 50%));
+    transform: scale(1.1);
 }
 
-.icons li a .fab {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: linear-gradient(0deg, #fff, #ddd);
-    border-radius: 50%;
-    line-height: calc(60px - 12px);
-    font-size: 24px;
-    color: #262626;
-    transition: .5s;
-}
-
-.icons li:nth-child(1) a:hover .fab {
-    color: #ff0000;
-}
-
-.icons li:nth-child(2) a:hover .fab {
-    color: rgb(17, 0, 255);
-}
-
-.icons li:nth-child(3) a:hover .fab {
-    color: #ff0000;
-}
 
 /* --------about-------- */
 
-#about{
+#about {
     padding: 80px 0;
     color: #ababab;
 }
 
-.row{
+.row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.about-col-1{
+.about-col-1 {
     flex-basis: 35%;
+    /* border: 2px solid blue; */
+    border-radius: 15px;
+    background-color: rgba(77, 72, 72, 0.5);
 }
 
-.about-col-1 img{
-    width : 100%;
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+    transition: filter 0.5s ease-in-out; /* Smooth transition for filter changes */
+}
+
+.about-col-1 img:hover{
+    filter: drop-shadow(15px 15px 50px rgba(0, 26, 255, 0.5)); /* Optionally, increase shadow on hover */
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+
+    /* position: absolute; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: transparent;
+    perspective: 1000px;
+    /* Ensures a good 3D effect */
+    z-index: 2;
+    /* Keep container above the particles */
+    padding: 15px;
     border-radius: 15px;
 }
 
-.about-col-2{
-    flex-basis: 60%;
-}
-
-.sub-title{
+.sub-title {
     font-size: 60px;
     font-weight: 600;
     color: #fff;
 }
 
-.tab-titles{
+.tab-titles {
     display: flex;
     margin: 20px 0 40px;
 }
 
-.tab-links{
+.tab-links {
     margin-right: 50px;
     font-size: 18px;
     font-weight: 500;
@@ -218,7 +233,7 @@ nav ul li a:hover::after{
     position: relative;
 }
 
-.tab-links::after{
+.tab-links::after {
     content: '';
     width: 0;
     height: 3px;
@@ -230,176 +245,784 @@ nav ul li a:hover::after{
     transition: 0.5s;
 }
 
-.tab-links.active-link::after{
+.tab-links.active-link::after {
     width: 50%;
 }
 
-.tab-contents ul li{
+.tab-contents ul li {
     list-style: none;
     margin: 10px 0;
 }
 
-.tab-contents ul li span{
+.tab-contents ul li span {
     /* color: #b54769; */
-    color: rgb(17, 0, 255);
+    color: rgb(58, 44, 250);
     font-size: 18px;
+    font-weight: bold;
 }
 
-.tab-contents{
+.tab-contents {
     display: none;
 }
 
-.tab-contents.active-tab{
+.tab-contents.active-tab {
     display: block;
 }
 
-/* portfolio */
+/* -----------portfolio------------ */
 
-#portfolio{
+#portfolio {
     padding: 50px 0;
 }
 
-.work-list{
+
+.grid-container-portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-
-.work{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.work img{
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
-}
-
-.layer{
-    width: 100%;
-    height: 0;
-    /* background: linear-gradient(rgba(0,0,0,0.6), #ff004f); */
-    background: linear-gradient(rgba(0,0,0,0.6), rgb(17, 0, 255));
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
     justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    font-size: 14px;
-    transition: height 0.5s;
+    align-items: center;
+    padding: 20px;
 }
 
-.layer h1{
+.grid-container-portfolio .grid-item {
+    /* background-color: rgba(4, 0, 255, 0.3); */
+    /* background: transparent; */
+    padding: 10px;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    /* transition: box-shadow 0.3s ease, transform 0.3s ease; */
+    /* Add transition */
+}
+
+.design_p {
+
+    /* position: absolute;  */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: transparent;
+    perspective: 1000px;
+    /* Ensures a good 3D effect */
+    z-index: 2;
+    /* Keep container above the particles  */
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/* .grid-container-portfolio .grid-item:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+} */
+
+#portfolio .content {
+    text-align: left;
+}
+
+#portfolio .content h2 {
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    padding: 20px;
+    /* text-align: left; */
 }
 
-.layer a{
-    margin-top: 20px;
-    /* color: #ff004f; */
-    color: rgb(17, 0, 255);
+#portfolio .content .btn_container {
+    display: flex;
+    /* Use flexbox for alignment */
+    align-items: center;
+    /* Center align items vertically */
+    justify-content: space-between;
+    /* Space out the button and icons */
+}
+
+#portfolio .content .btn_portfolio {
+    margin: 20px;
+    background-color: rgb(17, 0, 255);
+    /* Primary background color */
+    color: #fff;
+    /* Text color */
+    padding: 10px 20px;
+    /* Padding */
+    border: none;
+    /* Remove border */
+    border-radius: 25px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effects */
+    margin-right: 23px;
+    /* Space between button and icons */
+}
+
+#portfolio .content .btn_container .icons {
+    display: flex;
+    gap: 5px;
+    margin: 23px;
+}
+
+#portfolio .content .btn_container .icon {
+    width: 50px;
+    height: auto;
+}
+
+
+#portfolio .content .btn_portfolio:hover {
+    background-color: rgb(17, 0, 255);
+    /* Darker background color on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge button on hover */
+}
+
+#portfolio .content .btn_portfolio:active {
+    transform: scale(0.95);
+    /* Slightly shrink button when clicked */
+}
+
+
+#portfolio .content img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#portfolio .content a {
     text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
+    color: #337ab7;
 }
 
-.work:hover img{
-    transform: scale(1.1);
+#portfolio .content a:hover {
+    color: #23527c;
 }
 
-.work:hover .layer{
-    height: 100%;
+#portfolioblur {
+    transition: 0.5s;
 }
 
-.btn{
-    display: block;
-    margin: 50px;
-    width: fit-content;
-    /* border: 1px solid #ff004f; */
-    border: 1px solid rgb(17, 0, 255);
-    padding: 14px 50px;
-    border-radius: 6px;
+#portfolioblur.portfolioactive {
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.portfoliopopup {
+    position: fixed;
+    margin: 0 auto;
+    top: 10%;
+    left: 15%;
+    transform: translate(-50%, -10%);
+    width: 1400px;
+    /* Adjusted width for better content fit */
+    padding: 30px;
+    /* Adjusted padding for layout */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    background: #dcdcf7;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+    border-radius: 10px;
+    /* Added border-radius for consistency */
+    max-height: 80vh;
+    /* Limit the height to 80% of the viewport height */
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds max-height */
+}
+
+.portfoliopopup.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.portfoliopopup.animate {
+    animation: popup-animation 0.5s forwards;
+}
+
+.portfoliopopup.close {
+    animation: popup-close 0.5s forwards;
+}
+
+@keyframes popup-animation {
+    0% {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(5%);
+        opacity: 1;
+    }
+}
+
+@keyframes popup-close {
+    0% {
+        transform: translateY(5%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+body.no-scroll {
+    overflow-y: hidden;
+}
+
+.portfoliopopup h2,
+.portfoliopopup h1,
+.portfoliopopup p {
+    color: #111;
+}
+
+.portfoliopopup h3 {
+    display: inline-block;
+    color: #1d30d8;
+    font-weight: 100;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 8px 5px 8px;
+    margin: 13px 10px 10px 0;
+    background-color: aqua;
+}
+
+.portfoliopopup a {
+    position: relative;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-top: 20px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.5s;
+    background-color: rgb(17, 0, 255);
+    /* Primary background color */
+    border: none;
+    /* Remove border */
+    border-radius: 25px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effects */
 }
 
-.btn:hover{
-    /* background: #ff004f; */
-    background: rgb(17, 0, 255);
-
+.portfoliopopup a:hover {
+    background-color: rgb(17, 0, 255);
+    /* Darker background color on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge button on hover */
 }
+
+.upper-half {
+    display: flex;
+    margin-bottom: 20px;
+    /* Space between upper and lower halves */
+}
+
+.left-part {
+    flex: 60%;
+    padding: 10px;
+}
+
+.left-part .left_icon {
+    width: 50px;
+    height: auto;
+    margin: 10px 0px -18px 26vh;
+}
+
+.left-part .left_icon1 {
+    width: 46px;
+    height: auto;
+    margin: 11px 0px -18px 4px;
+}
+
+.right-part {
+    position: relative;
+    flex: 40%;
+    padding: 10px;
+    display: flex;
+    /* justify-content: flex-end; */
+    justify-content: right;
+    height: auto;
+}
+
+.image-slider {
+    width: 600px;
+    height: auto;
+    position: relative;
+    display: flex;
+    /* justify-content: flex-end; */
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slider img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.nav-arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+}
+
+.nav-arrows button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    /* border-radius: 50%; */
+    cursor: pointer;
+    font-size: 24px;
+    padding: 20px;
+    width: 100px;
+    /* Larger button area */
+    height: auto;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    transition: background-color 0.3s, transform 0.2s;
+    pointer-events: all;
+    z-index: 1;
+    /* Make sure buttons are above the image */
+}
+
+.nav-arrows button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-arrows .prev {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-arrows .next {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cross-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #dcdcf7;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    transition: background-color 0.3s;
+    z-index: 10;
+    /* Ensure it stays on top */
+}
+
+.cross-button:hover {
+    background-color: #dcdcf7;
+}
+
+
+
+
+
+
+/* Certificates */
+#certificates {
+    padding: 50px 0;
+}
+
+.grid-container-certificate {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.grid-container-certificate .grid-item {
+    /* background-color: #fff; */
+    /* background: transparent; */
+    padding: 10px;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Add transition */
+}
+
+.design_c {
+
+    /* position: absolute;  */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: transparent;
+    perspective: 1000px;
+    /* Ensures a good 3D effect */
+    z-index: 2;
+    /* Keep container above the particles  */
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.grid-container-certificate .grid-item:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+}
+
+
+
+#certificates .content {
+    text-align: center;
+}
+
+#certificates .content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+#certificates .content a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+#certificates .content a:hover {
+    color: #23527c;
+}
+
+#certificateblur {
+    transition: 0.5s;
+}
+
+#certificateblur.certificateactive {
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.certificatepopup {
+    position: fixed;
+    top: 15%;
+    left: 30%;
+    transform: translate(-50%, -10%);
+    width: 40vw;
+    /*Adjust width to a percentage of the viewport width*/
+    /*max-width: 600px;  Limit the maximum width */
+    padding: 10px;
+    /*Adjust padding as needed*/
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Modify shadow for a more subtle effect */
+    /*background: #fff;  Set a solid background color */
+    background: none;
+    /* Set a solid background color */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+    border-radius: 10px;
+    /* Add some rounded corners for a polished look */
+    display: flex;
+    /* Use flexbox for better alignment */
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center align items horizontally */
+    /*position: relative;  Make positioning of close button relative to popup */
+}
+
+.certificatepopup img {
+    width: 100%;
+    /* Ensure the image fills the container width */
+    height: 100%;
+    /* Maintain aspect ratio of the image */
+    object-fit: cover;
+    /* Adjust how the image is scaled */
+    border-radius: 10px;
+    /* Optional: add rounded corners to the image */
+}
+
+
+
+/* Target images with id="big" */
+/* #popup-23 img,
+#popup-24 img,
+#popup-25 img,
+#popup-26 img {
+    width: 80%;
+    /* You can adjust this value based on how large you want the image 
+    max-width: 800px;
+    /*Set a maximum width for larger images 
+    border-radius: 10px;
+    /* Optional rounded corners 
+    margin-left: 8vh;
+} */
+
+.big img {
+    width: 80%;
+    /* You can adjust this value based on how large you want the image */
+    max-width: 800px;
+    /*Set a maximum width for larger images */
+    border-radius: 10px;
+    /* Optional rounded corners */
+    margin-left: 8vh;
+}
+
+/* If you want the popup size to adjust as well */
+/* #popup-23,
+#popup-24,
+#popup-25,
+#popup-26 {
+    top: 4%;
+    left: 30%;
+} */
+
+.big {
+    top: 4%;
+    left: 30%;
+}
+
+
+
+
+.certificatepopup.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.certificatepopup.animate {
+    animation: popup-animation 0.5s forwards;
+}
+
+.certificatepopup.close {
+    animation: popup-close 0.5s forwards;
+}
+
+@keyframes popup-animation {
+    0% {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(5%);
+        opacity: 1;
+    }
+}
+
+@keyframes popup-close {
+    0% {
+        transform: translateY(5%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+body.no-scroll {
+    overflow-y: hidden;
+}
+
+.certificatepopup h2,
+.certificatepopup p {
+    color: #111;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #111;
+    z-index: 1001;
+    /* Ensure it is above other content */
+}
+
+
 
 /* contact */
 
-#contact{
-    height: 80vh;
+#contact {
+    display: block;
+    text-align: center;
+    padding-top: 10vh;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    height: 85vh;
+    /* background: #f7f7f7; Light background for the section */
 }
 
-.contact-left{
-    flex-basis: 35%;
+.contact-left {
+    /* border: 2px solid rgb(17, 0, 255); */
+    /* Soft red border */
+    border-radius: 30px;
+    padding: 20px;
+    /* background-color: white; Card-style look */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* Soft shadow for depth */
+    max-width: 600px;
+    margin: 0 auto;
+    /* Center the content */
+
+
+
+    /* position: absolute;  */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: transparent;
+    perspective: 1000px;
+    /* Ensures a good 3D effect */
+    z-index: 2;
+    /* Keep container above the particles  */
+    padding: 15px;
+    border-radius: 15px;
 }
 
-.contact-right{
-    flex-basis: 60%;
+.contact-left h1 {
+    font-size: 4em;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-.contact-left p{
+#contact .link {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 30px;
+    margin: 20px 0;
+    /* background-color: rgb(203, 173, 243, 0.8); */
+    /* Light grey background */
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    max-width: 600px;
+
+    background: linear-gradient(270deg, transparent 50%, rgb(128, 120, 241) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    /* border: 2px solid rgb(128, 120, 241); */
+    transition: background-position 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.linkedin {
+    max-width: 250px;
+}
+
+#contact .link:hover {
+    background-position: left bottom; 
+    color: rgb(0, 0, 0);
+}
+
+#contact .btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: rgb(17, 0, 255);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin: 20px 0 20px 0;
+}
+    
+#contact .btn:hover {
+    background-color: #333;
+}
+
+i {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+/* --------------------Add some responsive design for smaller screens---------------------- */
+@media (max-width: 768px) {
+    #contact {
+        padding-left: 5vh;
+        padding-right: 5vh;
+    }
+
+    .contact-left {
+        padding: 15px;
+    }
+
+    #contact .link {
+        font-size: 1em;
+    }
+}
+
+.contact-left p {
     margin-top: 30px;
 }
 
-.contact-left p i{
+.contact-left p i {
     /* color: #ff004f; */
     color: rgb(17, 0, 255);
     margin-right: 15px;
     font-size: 25px;
 }
 
-.social-icons{
+.social-icons {
     margin-top: 30px;
 }
 
-.social-icons a{
+.social-icons a {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     margin-right: 15px;
     color: #ababab;
     display: inline-block;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-in-out;
 }
 
-.social-icons a:hover{
-    /* color: #ff004f; */
+/* .social-icons a:hover {
     color: rgb(17, 0, 255);
     transform: translateY(-5px);
-}
+} */
 
-.btn.btn2{
-    display: inline-block;
-    /* background: #ff004f; */
-    background: rgb(17, 0, 255);
-}
-
-.contact-right form{
-    width: 100%;
-}
-
-form input, form textarea{
+/* form input,
+form textarea {
     width: 100%;
     border: 0;
     outline: none;
@@ -411,18 +1034,18 @@ form input, form textarea{
     border-radius: 6px;
 }
 
-form .btn2{
+form .btn2 {
     padding: 14px 60px;
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
 }
 
-#msg{
+#msg {
     color: #fff;
     margin-top: -40px;
     display: block;
-}
+} */
 
 /* footer */
 footer {
@@ -434,9 +1057,22 @@ footer {
     /* Add this line for more space between main content and footer */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* css for small screen */
 
-nav .fa-solid{
+nav .fa-solid {
     display: none;
 }
 
@@ -453,28 +1089,32 @@ nav .fa-solid{
 } */
 
 
-@media only screen and (max-width: 600px){
-    #header{
-        background-image: url(images/phone-background.png);   
+@media only screen and (max-width: 600px) {
+    #header {
+        background-image: url(images/phone-background.png);
     }
-    
-    .header-text{
+
+    .header-text {
         margin-top: 92%;
         /* font-size: 16px; */
     }
-    .header-text h1{
+
+    .header-text h1 {
         font-size: 30px;
     }
-    .header-text #element{
+
+    .header-text #element {
         font-size: 30px;
         /* color: #ff004f; */
         color: rgb(17, 0, 255);
     }
-    nav .fa-solid{
+
+    nav .fa-solid {
         display: block;
         font-size: 25px;
     }
-    nav ul{
+
+    nav ul {
         background: rgb(17, 0, 255);
         position: fixed;
         top: 0;
@@ -485,14 +1125,17 @@ nav .fa-solid{
         z-index: 2;
         transition: right 0.5s;
     }
-    nav ul li{
+
+    nav ul li {
         display: block;
         margin: 25px;
     }
-    nav ul li a::after{
+
+    nav ul li a::after {
         background: #fff;
     }
-    nav ul .fa-solid{
+
+    nav ul .fa-solid {
         position: absolute;
         top: 25px;
         left: 25px;
@@ -508,12 +1151,13 @@ nav .fa-solid{
         justify-content: center;
         text-align: center;
     }
-    .icons li{
+
+    .icons li {
         align-items: center;
         justify-content: center;
         text-align: center;
     }
-    
+
     .icons li a {
         width: 50px;
         height: 50px;
@@ -521,7 +1165,7 @@ nav .fa-solid{
         justify-content: center;
         text-align: center;
     }
-    
+
     .icons li a .fab {
         width: 100%;
         height: 100%;
@@ -534,19 +1178,24 @@ nav .fa-solid{
 
     /* about */
 
-    .sub-title{
+    .sub-title {
         font-size: 40px;
     }
-    .about-col-1, .about-col-2{
+
+    .about-col-1,
+    .about-col-2 {
         flex-basis: 100%;
     }
-    .about-col-1{
+
+    .about-col-1 {
         margin-bottom: 30px;
     }
-    .about-col-1 img{
-        width : 40%;
+
+    .about-col-1 img {
+        width: 40%;
         border-radius: 15px;
     }
+
     /* try */
 
     /* .head-div{
@@ -564,43 +1213,47 @@ nav .fa-solid{
     } */
 
     /* try */
-    .about-col-2{
+    .about-col-2 {
         font-size: 14px;
     }
-    .tab-links{
+
+    .tab-links {
         font-size: 16px;
         margin-right: 20px;
     }
 
     /* portfolio */
-    
-    .work-list{
+
+    .work-list {
         grid-template-columns: repeat(2, minmax(50px, 1fr));
     }
-    
-    .layer{
+
+    .layer {
         padding: 0 10px;
         font-size: 12px;
     }
-    
-    .layer p{
+
+    .layer p {
         display: none;
     }
-    
-    .layer a{
+
+    .layer a {
         line-height: 40px;
         width: 40px;
         height: 40px;
     }
 
     /* contact */
-    .contact-left, .contact-right{
+    .contact-left,
+    .contact-right {
         flex-basis: 100%;
     }
-    .contact-left{
+
+    .contact-left {
         margin-top: 50px;
     }
-    .contact-left .btn{
+
+    .contact-left .btn {
         text-align: center;
     }
 
@@ -615,36 +1268,3 @@ nav .fa-solid{
         text-align: center;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
